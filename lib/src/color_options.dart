@@ -1,3 +1,5 @@
+library color_options;
+
 enum ColorOutput { ON, OFF }
 
 /// Ansi color modifier: Reset to default.
@@ -17,3 +19,4 @@ const String RED = '\u001B[31m';
 
 /// Ansi color modifier.
 const String YELLOW = '\u001B[33m';
+
