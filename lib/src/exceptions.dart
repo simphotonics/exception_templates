@@ -1,4 +1,4 @@
-import 'package:error_template/src/color_options.dart';
+import '../src/color_options.dart';
 
 class ExceptionOf<T> implements Exception {
   ExceptionOf({

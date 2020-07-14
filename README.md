@@ -2,18 +2,20 @@
 
 ## Introduction
 
-The library [`exception_templates`][exception_templates] provides parameterized classes based on Dart `Exception` and `Error`.
-The classes allow throwing and catching exceptions characterized by their type argument without the need to create library specific implementations.
+The library [`exception_templates`][exception_templates] provides
+the parameterized classes `ExceptionOf<T>` and `ErrorOf<T>`.
+These allow throwing and catching exceptions characterized
+by their type argument without the need to create class specific exceptions.
 
 ## Usage
 
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file. The program below demonstrates how
 to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
-Colour output can be globally enabled or disabled by setting the field `colorOutput`.
+Colour output can be globally enabled or disabled by setting the static field `colorOutput`.
 
 
 ```Dart
-import 'package:error_template/error_template.dart';
+import 'package:exception_templates/exception_templates.dart';
 
 // Test class A.
 class A {
@@ -62,7 +64,6 @@ main(List<String> args) {
   // Throwing an ErrorOf<A>.
   A().tearDown();
 }
-
 ```
 
 

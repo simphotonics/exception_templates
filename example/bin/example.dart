@@ -4,8 +4,7 @@
 // # dart bin/example.dart
 //
 // followed by enter.
-
-import 'package:error_template/error_template.dart';
+import 'package:exception_templates/exception_templates.dart';
 
 // Test class A.
 class A {

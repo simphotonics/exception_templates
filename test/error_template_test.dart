@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:error_template/error_template.dart';
+import 'package:exception_templates/exception_templates.dart';
 import 'package:test/test.dart';
 
 class Complex<T extends num> {
