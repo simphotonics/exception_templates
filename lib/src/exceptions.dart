@@ -24,7 +24,11 @@ class ExceptionOf<T> implements Exception {
 
   @override
   String toString() {
-    final msg = (message == null) ? '' : Error.safeToString(message) + '\n';
+    final red = (colorOutput == ColorOutput.ON) ? RED : '';
+    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
+
+    final msg =
+        (message == null) ? '' : Error.safeToString(message) + reset + '\n';
 
     final expected = (expectedState == null)
         ? ''
@@ -34,9 +38,6 @@ class ExceptionOf<T> implements Exception {
         ? ''
         : ' Found: ' + Error.safeToString(invalidState) + '\n';
 
-    final red = (colorOutput == ColorOutput.ON) ? RED : '';
-    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
-
-    return '$red${this.runtimeType}: $reset' + msg + found + expected + '\n';
+    return '$red${this.runtimeType}: ' + msg + found + expected + '\n';
   }
 }
