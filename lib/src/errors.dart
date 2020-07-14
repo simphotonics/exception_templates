@@ -5,7 +5,6 @@ class ErrorOf<T> extends Error {
     this.message,
     this.invalidState,
     this.expectedState,
-    this.showStackTrace = false,
   });
 
   /// Message added when the error is thrown.
@@ -17,9 +16,6 @@ class ErrorOf<T> extends Error {
   /// Generic object conveying information about an expected state.
   final Object expectedState;
 
-  /// Whether to add the stack trace to the printed error message.
-  final bool showStackTrace;
-
   /// Whether to enable color output.
   static ColorOutput colorOutput = ColorOutput.ON;
 
@@ -28,7 +24,11 @@ class ErrorOf<T> extends Error {
 
   @override
   String toString() {
-    final msg = (message == null) ? '' : Error.safeToString(message) + '\n';
+    final red = (colorOutput == ColorOutput.ON) ? RED : '';
+    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
+
+    final msg =
+        (message == null) ? '' : Error.safeToString(message) + reset + '\n';
 
     final expected = (expectedState == null)
         ? ''
@@ -38,16 +38,6 @@ class ErrorOf<T> extends Error {
         ? ''
         : ' Found: ' + Error.safeToString(invalidState) + '\n';
 
-    final red = (colorOutput == ColorOutput.ON) ? RED : '';
-    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
-    final yellow = (colorOutput == ColorOutput.ON) ? YELLOW : '';
-
-    return '$red${this.runtimeType}: $reset' +
-        msg +
-        found +
-        expected +
-        '\n' +
-        '${yellow}StackTrace: $reset\n' +
-        super.stackTrace.toString();
+    return '$red${this.runtimeType}: ' + msg + found + expected;
   }
 }
