@@ -8,8 +8,8 @@ The classes allow throwing and catching exceptions characterized by their type a
 ## Usage
 
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file. The program below demonstrates how
-to throw and catch objects of type `ExceptionOf<T>`.
-Colour output can be globally enabled or disabled by setting the field `colorOutput`. 
+to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
+Colour output can be globally enabled or disabled by setting the field `colorOutput`.
 
 
 ```Dart
