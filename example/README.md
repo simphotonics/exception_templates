@@ -1,12 +1,13 @@
-# Exception Templates
 
 
-## Example
+
+## Exception Templates: Example
 
 The program found here can be run in a terminal by navigating to the folder *example* in your local copy of this library and using the command:
 ```Console
 $ dart bin/example.dart
 ```
+
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker].
