@@ -1,5 +1,8 @@
 import 'color_options.dart';
+import 'error_type.dart';
 
+/// Parameterized error template.
+/// The generic type `T` hints at **where** the error occured.
 class ErrorOf<T> extends Error {
   ErrorOf({
     this.message,
@@ -23,21 +26,33 @@ class ErrorOf<T> extends Error {
   Type get typeArgument => T;
 
   @override
-  String toString() {
-    final red = (colorOutput == ColorOutput.ON) ? RED : '';
-    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
+  String toString() => toColorString(
+        colorOutput: colorOutput,
+        message: message,
+        expectedState: expectedState,
+        invalidState: invalidState,
+        errorType: this.runtimeType,
+      );
+}
 
-    final msg =
-        (message == null) ? '' : Error.safeToString(message) + reset + '\n';
-
-    final expected = (expectedState == null)
-        ? ''
-        : ' Expected: ' + Error.safeToString(expectedState) + '\n';
-
-    final found = (invalidState == null)
-        ? ''
-        : ' Found: ' + Error.safeToString(invalidState) + '\n';
-
-    return '$red${this.runtimeType}: ' + msg + found + expected;
-  }
+/// Parameterized error template.
+/// The generic type `T` hints at what **type** of error occured.
+/// Usage:
+/// ```Dart
+/// // Creating a new [ErrorType].
+/// class SerializationFailed extends ErrorType{}
+///
+/// // Throwing an error of type [ErrorType].
+/// throw ErrorOfType<SerializationFailed>;
+/// ```
+class ErrorOfType<T extends ErrorType> extends ErrorOf<T> {
+  ErrorOfType({
+    Object message,
+    Object invalidState,
+    Object expectedState,
+  }) : super(
+          message: message,
+          invalidState: invalidState,
+          expectedState: expectedState,
+        );
 }
