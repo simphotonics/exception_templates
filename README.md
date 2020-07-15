@@ -13,13 +13,14 @@ by their type argument.
 
 Using parameterized exceptions eliminates the need to define library or class specific exceptions and enables filtering exceptions based on their type argument.
 
-To highlight the exception *context* one may use:
-* `ExceptionOf<T>` and
-* `ErrorOf<T>`. In this case, the type argument hints at *where* the exception occured.
+To highlight the exception *context* use:
+* [`ExceptionOf<T>`][ExceptionOf<T>] and
+* [`ErrorOf<T>`][ErrorOf<T>]. In this case, the type argument hints at *where* the exception occured.
 
-To emphasise the exception *type* one may use the classes:
-* `ExceptionOfType<T>` and
-* `ErrorOfType<T>`. Here, the generic type `T` hints at the *type* of exception that occured.
+To emphasise the exception *type* use:
+* [`ExceptionOfType<T>`][ExceptionOfType<T>] and
+* [`ErrorOfType<T>`][ErrorOfType<T>].
+Here, the generic type `T` indicates the *type* of exception that occured.
 
 
 ## Usage
@@ -28,7 +29,7 @@ To use this library include [exception_templates] as dependency in your `pubspec
 
 The program below demonstrates how
 to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
-Colour output can be globally enabled o[![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)r disabled by setting the static field `colorOutput`
+Colour output can be globally enabled or disabled by setting the static field `colorOutput`
 to `ColorOutput.ON` or `ColorOutput.OFF`, respectively,
 
 
@@ -116,6 +117,15 @@ A copy of the program show in the section above can be found in the folder  [exa
 Please file feature requests and bugs at the [issue tracker].
 
 [issue tracker]: https://github.com/simphotonics/exception_templates/issues
+
 [example]: example
-[ExceptionOf]:
+
+[ExceptionOf<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ExceptionOf-class.html
+
+[ExceptionOfType<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ExceptionOfType-class.html
+
+[ErrorOf<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ErrorOf-class.html
+
+[ErrorOfType<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ErrorOfType-class.html
+
 [exception_templates]: https://pub.dev/packages/exception_templates
