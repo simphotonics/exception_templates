@@ -20,3 +20,32 @@ const String RED = '\u001B[31m';
 /// Ansi color modifier.
 const String YELLOW = '\u001B[33m';
 
+/// Transforms error/exception messages to an output string.
+String toColorString(
+    {Object message,
+    Object expectedState,
+    Object invalidState,
+    ColorOutput colorOutput,
+    Type errorType}) {
+  final red = (colorOutput == ColorOutput.ON) ? RED : '';
+  final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
+  final green = (colorOutput == ColorOutput.ON) ? GREEN : '';
+  final yellow = (colorOutput == ColorOutput.ON) ? YELLOW : '';
+
+  final msg =
+      (message == null) ? '' : Error.safeToString(message) + reset + '\n';
+
+  final expected = (expectedState == null)
+      ? ''
+      : ' $green Expected state: $reset' +
+          Error.safeToString(expectedState) +
+          '\n';
+
+  final invalid = (invalidState == null)
+      ? ''
+      : ' $yellow Invalid state: $reset' +
+          Error.safeToString(invalidState) +
+          '\n';
+
+  return '$red$errorType: ' + msg + invalid + expected + '\n';
+}
