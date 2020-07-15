@@ -1,5 +1,8 @@
-import '../src/color_options.dart';
+import 'color_options.dart';
+import 'exception_type.dart';
 
+/// Parameterized exception class.
+/// The type argument hints at **where** the exception occured.
 class ExceptionOf<T> implements Exception {
   ExceptionOf({
     this.message,
@@ -23,21 +26,33 @@ class ExceptionOf<T> implements Exception {
   Type get typeArgument => T;
 
   @override
-  String toString() {
-    final red = (colorOutput == ColorOutput.ON) ? RED : '';
-    final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
+  String toString() => toColorString(
+        colorOutput: colorOutput,
+        message: message,
+        expectedState: expectedState,
+        invalidState: invalidState,
+        errorType: this.runtimeType,
+      );
+}
 
-    final msg =
-        (message == null) ? '' : Error.safeToString(message) + reset + '\n';
-
-    final expected = (expectedState == null)
-        ? ''
-        : ' Expected: ' + Error.safeToString(expectedState) + '\n';
-
-    final found = (invalidState == null)
-        ? ''
-        : ' Found: ' + Error.safeToString(invalidState) + '\n';
-
-    return '$red${this.runtimeType}: ' + msg + found + expected + '\n';
-  }
+/// Parameterized exception template.
+/// The generic type `T` hints at **what type** of error occured.
+/// Usage:
+/// ```Dart
+/// // Defining an exception type.
+/// class DatabaseNotInitialized extends ExceptionType{}
+///
+/// // Throwing an exception of the newly defined type.
+/// throw ExceptionOfType<DatabaseNotInitialized>
+/// ```
+class ExceptionOfType<T extends ExceptionType> extends ExceptionOf<T> {
+  ExceptionOfType({
+    Object message,
+    Object invalidState,
+    Object expectedState,
+  }) : super(
+          message: message,
+          invalidState: invalidState,
+          expectedState: expectedState,
+        );
 }
