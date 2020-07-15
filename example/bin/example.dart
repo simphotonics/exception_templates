@@ -14,7 +14,7 @@ class InvalidDataFound extends ExceptionType {}
 // Test class A.
 class A {
   Object data;
-  // Method that throws parameterized exception.
+  // Throwing a parameterized exception.
   void setUp() {
     data = List<int>.filled(3, 37);
     throw ExceptionOf<A>(
@@ -23,7 +23,7 @@ class A {
         invalidState: 'Adapter x078 is missing.');
   }
 
-  // Method that throws parameterized error.
+  // Throwing a parameterized error.
   void tearDown() {
     throw ErrorOfType<FailedToSerializeObject>(
         message: 'An error occured in tearDown().',
@@ -48,10 +48,11 @@ main(List<String> args) {
     print(e);
   }
 
-  // Turning of colour output globally.
+  // Turning off colour output globally.
   ExceptionOf.colorOutput = ColorOutput.OFF;
 
-  // Catching an ExceptionOfType<InvalidDataFound>. Colour output switched off.
+  // Catching an ExceptionOfType<InvalidDataFound>.
+  // Colour output is switched off.
   try {
     throw ExceptionOfType<InvalidDataFound>(
         message: 'Something went wrong with class B.',
