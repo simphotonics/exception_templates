@@ -6,10 +6,16 @@
 // followed by enter.
 import 'package:exception_templates/exception_templates.dart';
 
+// Defining error/exception types:
+class FailedToSerializeObject extends ErrorType{}
+class InvalidDataFound extends ExceptionType{}
+
 // Test class A.
 class A {
+  Object data;
   // Method that throws parameterized exception.
   void setUp() {
+    data = List<int>.filled(3, 37);
     throw ExceptionOf<A>(
         message: 'Set up failed.',
         expectedState: 'A complete set of adapters.',
@@ -18,21 +24,25 @@ class A {
 
   // Method that throws parameterized error.
   void tearDown() {
-    throw ErrorOf<A>(
-      message: 'An error occured in tearDown().',
-      expectedState: 'All object are serialized and stored.',
-      invalidState: 'Failed to serialize objects.'
-    );
+    throw ErrorOfType<FailedToSerializeObject>(
+        message: 'An error occured in tearDown().',
+        expectedState: 'All objects are serialized and stored.',
+        invalidState: 'Failed to serialize object $data.');
   }
 }
 
 // Test class B.
-class B {}
+class B {
+  B(this.data);
+  final int data;
+}
+
+final a = A();
 
 main(List<String> args) {
   // Catching an ExceptionOf<A>.
   try {
-    A().setUp();
+    a.setUp();
   } on ExceptionOf<A> catch (e) {
     print(e);
   }
@@ -40,22 +50,23 @@ main(List<String> args) {
   // Turning of colour output globally.
   ExceptionOf.colorOutput = ColorOutput.OFF;
 
-  // Catching an ExceptionOf<B>. Colour output switched off.
+  // Catching an ExceptionOfType<InvalidDataFound>. Colour output switched off.
   try {
-    throw ExceptionOf<B>(
-      message: 'Something wrong with class B.',
-      expectedState: 'Colour output should be switched off.',
-    );
-  } on ExceptionOf<B> catch (e) {
+    throw ExceptionOfType<InvalidDataFound>(
+        message: 'Something went wrong with class B.',
+        expectedState: 'data > 0.',
+        invalidState: 'data == null');
+  } on ExceptionOfType catch (e) {
+    print('// Switching of colour output.');
     print(e);
   } on ExceptionOf<A> catch (e) {
     print('Should not reach here! $e');
   }
 
-  // Throwing and catching an ErrorOf<A>.
+  // Throwing and catching an ErrorOf<FailedToSerializeObject>.
   try {
-    A().tearDown();
-  } on ErrorOf<A> catch (e) {
+    a.tearDown();
+  } on ErrorOfType<FailedToSerializeObject> catch (e) {
     print('${CYAN}DEMO only, errors should never be caught!');
     print(e);
   }
