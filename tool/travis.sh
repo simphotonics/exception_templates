@@ -58,7 +58,7 @@ pub run test
 # ===============================
 
 # Directories to be processed
-directories="example performance"
+directories="example"
 
 for directory in $directories; do
   cd $directory
