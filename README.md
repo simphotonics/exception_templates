@@ -1,5 +1,7 @@
 # Exception Templates
 
+[![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)
+
 ## Introduction
 
 When handling a program exception, the two main concerns are in what *context*
@@ -26,7 +28,7 @@ To use this library include [exception_templates] as dependency in your `pubspec
 
 The program below demonstrates how
 to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
-Colour output can be globally enabled or disabled by setting the static field `colorOutput`
+Colour output can be globally enabled o[![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)r disabled by setting the static field `colorOutput`
 to `ColorOutput.ON` or `ColorOutput.OFF`, respectively,
 
 
