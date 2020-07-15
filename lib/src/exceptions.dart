@@ -36,7 +36,7 @@ class ExceptionOf<T> implements Exception {
 }
 
 /// Parameterized exception template.
-/// The generic type `T` hints at **what type** of error occured.
+/// The generic type `T` indicates what **type** of error occured.
 /// Usage:
 /// ```Dart
 /// // Defining an exception type.

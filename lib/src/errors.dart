@@ -36,7 +36,7 @@ class ErrorOf<T> extends Error {
 }
 
 /// Parameterized error template.
-/// The generic type `T` hints at what **type** of error occured.
+/// The generic type `T` indicates what **type** of error occured.
 /// Usage:
 /// ```Dart
 /// // Creating a new [ErrorType].
