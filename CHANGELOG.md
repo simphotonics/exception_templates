@@ -1,5 +1,7 @@
-# 0.0.1
+## 0.0.2
 
-Initial Version of the library.
+Amended docs. 
 
+## 0.0.1
 
+Initial version of the library.
