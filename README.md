@@ -18,9 +18,8 @@ To highlight the exception *context* use:
 * [`ErrorOf<T>`][ErrorOf<T>]. In this case, the type argument hints at *where* the exception occured.
 
 To emphasise the exception *type* use:
-* [`ExceptionOfType<T>`][ExceptionOfType<T>] and
-* [`ErrorOfType<T>`][ErrorOfType<T>].
-Here, the generic type `T` indicates the *type* of exception that occured.
+* [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
+* [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
 
 
 ## Usage
