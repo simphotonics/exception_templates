@@ -22,7 +22,7 @@ class ExceptionOf<T> implements Exception {
   /// Whether to enable color output.
   static ColorOutput colorOutput = ColorOutput.ON;
 
-  /// Type argument of the error class.
+  /// Type argument of the exception class.
   Type get typeArgument => T;
 
   @override

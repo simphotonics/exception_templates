@@ -7,8 +7,9 @@
 import 'package:exception_templates/exception_templates.dart';
 
 // Defining error/exception types:
-class FailedToSerializeObject extends ErrorType{}
-class InvalidDataFound extends ExceptionType{}
+class FailedToSerializeObject extends ErrorType {}
+
+class InvalidDataFound extends ExceptionType {}
 
 // Test class A.
 class A {

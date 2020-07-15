@@ -3,6 +3,11 @@ import 'dart:math';
 import 'package:exception_templates/exception_templates.dart';
 import 'package:test/test.dart';
 
+// Defining error/exception types:
+class FailedToSerializeObject extends ErrorType {}
+
+class InvalidDataFound extends ExceptionType {}
+
 class Complex<T extends num> {
   Complex([this.real, this.imag]);
 
@@ -41,7 +46,7 @@ void main() {
         expect(e.typeArgument, String);
       }
     });
-    test('Colour', () {
+    test('Testing colour output', () {
       ExceptionOf.colorOutput = ColorOutput.OFF;
       expect(
           ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
@@ -52,6 +57,21 @@ void main() {
       expect(ExceptionOf<Complex>().toString().substring(0, RED.length), RED,
           reason: 'Message start with the colour code '
               'if colour output is turned on');
+    });
+  });
+
+  group('ExceptionOfType:', () {
+    test('<InvalidDataFound>', () {
+      try {
+        throw ExceptionOfType<InvalidDataFound>();
+      } on ExceptionOfType catch (e) {
+        expect(e.typeArgument, InvalidDataFound);
+        expect(e.message, null);
+        expect(e.invalidState, null);
+        expect(e.expectedState, null);
+      } catch (e) {
+        throw Exception('Exception should have been caught already!');
+      }
     });
   });
   group('ErrorOf:', () {
@@ -69,6 +89,21 @@ void main() {
         expect(e.message, 'Error');
         expect(e.invalidState, invalid);
         expect(e.expectedState, zero);
+      } catch (e) {
+        throw Exception('Error should have been caught already!');
+      }
+    });
+  });
+
+  group('ErrorOfType:', () {
+    test('<FailedToSerializeObject>', () {
+      try {
+        throw ErrorOfType<FailedToSerializeObject>();
+      } on ErrorOfType catch (e) {
+        expect(e.typeArgument, FailedToSerializeObject);
+        expect(e.message, null);
+        expect(e.invalidState, null);
+        expect(e.expectedState, null);
       } catch (e) {
         throw Exception('Error should have been caught already!');
       }
