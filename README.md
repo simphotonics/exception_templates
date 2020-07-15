@@ -93,7 +93,7 @@ main(List<String> args) {
   // Throwing and catching an ErrorOf<A>.
   try {
     a.tearDown();
-  } on ErrorOf<A> catch (e) {
+  } on ErrorOfType<FailedToSerializeObject> catch (e) {
     print('${CYAN}DEMO only, errors should never be caught!');
     print(e);
   }
