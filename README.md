@@ -93,7 +93,7 @@ main(List<String> args) {
     print('Should not reach here! $e');
   }
 
-  // Throwing and catching an ErrorOf<FailedToSerializeObject>.
+  // Throwing and catching an ErrorOfType<FailedToSerializeObject>.
   try {
     a.tearDown();
   } on ErrorOfType<FailedToSerializeObject> catch (e) {
