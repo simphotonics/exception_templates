@@ -2,25 +2,29 @@
 
 ## Introduction
 
+When handling a program exception, the two main concerns are in what *context*
+did it occur and what *type* of exception occured.
+
 The library [`exception_templates`][exception_templates] provides
 parameterized classes that allow throwing and catching exceptions characterized
-by their type argument without the need to define library specific exceptions.
+by their type argument.
 
-When handling a program exceptions, the two main concerns are in what *context*
-did it occur and what *type* of exception occured.
+Using parameterized exceptions eliminates the need to define library or class specific exceptions and enables filtering exceptions based on their type argument.
 
 To highlight the exception *context* one may use:
 * `ExceptionOf<T>` and
 * `ErrorOf<T>`. In this case, the type argument hints at *where* the exception occured.
 
-To emphasise the exception *type* use the classes:
+To emphasise the exception *type* one may use the classes:
 * `ExceptionOfType<T>` and
 * `ErrorOfType<T>`. Here, the generic type `T` hints at the *type* of exception that occured.
 
 
 ## Usage
 
-To use this library include [exception_templates] as dependency in your `pubspec.yaml` file. The program below demonstrates how
+To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
+
+The program below demonstrates how
 to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
 Colour output can be globally enabled or disabled by setting the static field `colorOutput`
 to `ColorOutput.ON` or `ColorOutput.OFF`, respectively,
@@ -73,7 +77,7 @@ main(List<String> args) {
   // Turning of colour output globally.
   ExceptionOf.colorOutput = ColorOutput.OFF;
 
-  // Catching an ExceptionOf<B>. Colour output switched off.
+  // Catching an ExceptionOfType<InvalidDataFound>. Colour output switched off.
   try {
     throw ExceptionOfType<InvalidDataFound>(
         message: 'Something went wrong with class B.',
@@ -96,6 +100,8 @@ main(List<String> args) {
 }
 
 ```
+A typical output produced when running the program above is shown below:
+![Console Output](https://raw.githubusercontent.com/simphotonics/exception_templates/master/images/console_output.svg?sanitize=true)
 
 
 ## Examples
