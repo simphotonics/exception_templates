@@ -13,11 +13,11 @@ by their type argument.
 
 Using parameterized exceptions eliminates the need to define library or class specific exceptions and enables filtering exceptions based on their type argument.
 
-To highlight the exception *context* use:
+To highlight the exception **context** use:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and
 * [`ErrorOf<T>`][ErrorOf<T>]. In this case, the type argument hints at *where* the exception occured.
 
-To emphasise the exception *type* use:
+To emphasise the exception **type** use:
 * [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
 * [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
 
