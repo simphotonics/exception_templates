@@ -585,8 +585,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="2.0000001"
-     inkscape:cx="490.54409"
-     inkscape:cy="339.45294"
+     inkscape:cx="428.95616"
+     inkscape:cy="334.59383"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -838,7 +838,7 @@
                y="90.804024"
                x="123.7689"
                id="tspan1283"
-               sodipodi:role="line">$</tspan></text>
+               sodipodi:role="line"> $</tspan></text>
           <g
              transform="translate(0.52759446,112.55527)"
              id="g1148">
@@ -853,7 +853,7 @@
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.26458332"
                  y="-21.931307"
                  x="67.691025"
-                 sodipodi:role="line">:~/exception_templates</tspan></text>
+                 sodipodi:role="line"> :~/exception_templates</tspan></text>
             <g
                id="g1137">
               <text
@@ -870,7 +870,7 @@
                    sodipodi:role="line">dan</tspan></text>
               <text
                  xml:space="preserve"
-                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5114994px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.5114994px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';letter-spacing:0px;word-spacing:0px;direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
                  x="49.092915"
                  y="-21.620039"
                  id="text1261"
@@ -879,7 +879,7 @@
                    id="tspan1259"
                    x="49.092915"
                    y="-21.620039"
-                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332">:nano </tspan></text>
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332;">:nano </tspan></text>
               <text
                  id="text1553"
                  y="-21.620039"
@@ -891,7 +891,7 @@
                    y="-21.620039"
                    x="62.89539"
                    id="tspan1551"
-                   sodipodi:role="line">@ </tspan></text>
+                   sodipodi:role="line"> @ </tspan></text>
             </g>
           </g>
         </g>
@@ -1090,7 +1090,7 @@
                id="tspan1349"
                x="123.7689"
                y="90.804024"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.26458332">$</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.26458332"> $</tspan></text>
           <g
              id="g1371"
              transform="translate(0.52759446,112.55527)">
@@ -1105,7 +1105,7 @@
                  x="67.691025"
                  y="-21.931307"
                  style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-                 id="tspan1353">:~/exception_templates</tspan></text>
+                 id="tspan1353"> :~/exception_templates</tspan></text>
             <g
                id="g1369">
               <text
@@ -1125,9 +1125,9 @@
                  id="text1363"
                  y="-21.620039"
                  x="49.092915"
-                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5114994px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.5114994px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';letter-spacing:0px;word-spacing:0px;direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
                  xml:space="preserve"><tspan
-                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';direction:ltr;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
                    y="-21.620039"
                    x="49.092915"
                    id="tspan1361"
@@ -1143,7 +1143,7 @@
                    id="tspan1365"
                    x="62.89539"
                    y="-21.620039"
-                   style="direction:ltr;fill:#999999;stroke-width:0.26458332">@ </tspan></text>
+                   style="direction:ltr;fill:#999999;stroke-width:0.26458332"> @ </tspan></text>
             </g>
           </g>
         </g>
