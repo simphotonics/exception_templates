@@ -1,7 +1,7 @@
 import '../utils/color_options.dart';
 
 /// Parameterized error template.
-/// 
+///
 /// The generic type `T` hints at **where** the error occured.
 class ErrorOf<T> extends Error {
   ErrorOf({
