@@ -1,7 +1,7 @@
-import 'color_options.dart';
-import 'error_type.dart';
+import '../utils/color_options.dart';
 
 /// Parameterized error template.
+/// 
 /// The generic type `T` hints at **where** the error occured.
 class ErrorOf<T> extends Error {
   ErrorOf({
@@ -33,26 +33,4 @@ class ErrorOf<T> extends Error {
         invalidState: invalidState,
         errorType: this.runtimeType,
       );
-}
-
-/// Parameterized error template.
-/// The generic type `T` indicates what **type** of error occured.
-/// Usage:
-/// ```Dart
-/// // Creating a new [ErrorType].
-/// class SerializationFailed extends ErrorType{}
-///
-/// // Throwing an error of type [ErrorType].
-/// throw ErrorOfType<SerializationFailed>;
-/// ```
-class ErrorOfType<T extends ErrorType> extends ErrorOf<T> {
-  ErrorOfType({
-    Object message,
-    Object invalidState,
-    Object expectedState,
-  }) : super(
-          message: message,
-          invalidState: invalidState,
-          expectedState: expectedState,
-        );
 }
