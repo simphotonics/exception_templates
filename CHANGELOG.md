@@ -1,3 +1,6 @@
+## 0.0.5
+
+Amended `example\README.md`. Added link to `example.dart`.
 
 ## 0.0.4
 
