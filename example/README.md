@@ -13,6 +13,6 @@ $ dart bin/example.dart
 
 Please file feature requests and bugs at the [issue tracker].
 
-[issue tracker]: https://github.com/simphotonics/exception_templates
+[issue tracker]: https://github.com/simphotonics/exception_templates/issues
 
 [example]: https://github.com/simphotonics/exception_templates/blob/master/example/bin/example.dart
