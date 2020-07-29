@@ -30,6 +30,6 @@ class ExceptionOf<T> implements Exception {
         message: message,
         expectedState: expectedState,
         invalidState: invalidState,
-        errorType: this.runtimeType,
+        errorType: runtimeType,
       );
 }

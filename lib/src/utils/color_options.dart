@@ -6,13 +6,13 @@ enum ColorOutput { ON, OFF }
 const String RESET = '\u001B[0m';
 
 /// Ansi color modifier.
-const String BLUE = "\u001B[34m";
+const String BLUE = '\u001B[34m';
 
 /// Ansi color modifier.
-const String CYAN = "\u001B[36m";
+const String CYAN = '\u001B[36m';
 
 /// Ansi color modifier.
-const String GREEN = "\u001B[32m";
+const String GREEN = '\u001B[32m';
 
 /// Ansi color modifier.
 const String RED = '\u001B[31m';

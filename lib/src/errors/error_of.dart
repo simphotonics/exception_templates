@@ -31,6 +31,6 @@ class ErrorOf<T> extends Error {
         message: message,
         expectedState: expectedState,
         invalidState: invalidState,
-        errorType: this.runtimeType,
+        errorType: runtimeType,
       );
 }

@@ -1,3 +1,7 @@
+## 0.0.6
+
+Added dev_dependency on package `pedantic`. Applied linter suggestions.
+
 ## 0.0.5
 
 Amended `example\README.md`. Added link to `example.dart`.

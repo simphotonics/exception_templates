@@ -74,8 +74,8 @@ final dartKeywords = UnmodifiableListView<String>([
 /// Converts a capital camel case Dart class name
 /// to a lower case underscore separated Dart library name.
 String classNameToLibraryName(String className) {
-  final pattern = RegExp(r"(?<=[a-z])[A-Z]");
-  String libraryName = className?.replaceAllMapped(
+  final pattern = RegExp(r'(?<=[a-z])[A-Z]');
+  final libraryName = className?.replaceAllMapped(
     pattern,
     (Match m) => '_${m[0]}',
   );
@@ -86,7 +86,7 @@ String classNameToLibraryName(String className) {
 bool isValidIdentifier(String input) {
   if (input == null) return false;
   // Contains only valid characters and starts with a non-numeric character.
-  final regExp = RegExp(r"^[A-Za-z_$][A-Za-z0-9_$]*");
+  final regExp = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*');
   final match = regExp.stringMatch(input);
   if (match != input) return false;
   if (dartKeywords.contains(input)) {

@@ -76,8 +76,8 @@ void main() {
   });
   group('ErrorOf:', () {
     test('<Complex>', () {
-      final Complex zero = Complex(0, 0);
-      final Complex invalid = Complex(0, null);
+      final zero = Complex(0, 0);
+      final invalid = Complex(0, null);
       try {
         throw ErrorOf<Complex>(
           message: 'Error',
