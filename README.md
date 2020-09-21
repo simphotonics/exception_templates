@@ -5,7 +5,7 @@
 
 ## Update
 
-Version [`exception_templates 0.1.0`][exception_templates] introduces null-safety features.
+Version [`0.1.0-nullsafety`][exception_templates] introduces null-safety features.
 
 ## Introduction
 

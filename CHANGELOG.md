@@ -1,4 +1,4 @@
-## 0.1.0
+## 0.1.0-nullsafety
 Enabled null-safety. Testing now uses `minimal_test`.
 
 ## 0.0.6
