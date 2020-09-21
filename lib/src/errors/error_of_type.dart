@@ -14,9 +14,9 @@ import 'error_of.dart';
 /// ```
 class ErrorOfType<T extends ErrorType> extends ErrorOf<T> {
   ErrorOfType({
-    Object message,
-    Object invalidState,
-    Object expectedState,
+    Object message = '',
+    Object invalidState = '',
+    Object expectedState = '',
   }) : super(
           message: message,
           invalidState: invalidState,

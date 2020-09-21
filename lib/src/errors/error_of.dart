@@ -5,9 +5,9 @@ import '../utils/color_options.dart';
 /// The generic type `T` hints at **where** the error occured.
 class ErrorOf<T> extends Error {
   ErrorOf({
-    this.message,
-    this.invalidState,
-    this.expectedState,
+    this.message = '',
+    this.invalidState = '',
+    this.expectedState = '',
   });
 
   /// Message added when the error is thrown.

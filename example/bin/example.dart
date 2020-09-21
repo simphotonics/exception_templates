@@ -13,7 +13,7 @@ class InvalidDataFound extends ExceptionType {}
 
 // Test class A.
 class A {
-  Object data;
+  Object? data;
   // Throwing a parameterized exception.
   void setUp() {
     data = List<int>.filled(3, 37);
@@ -41,6 +41,9 @@ class B {
 final a = A();
 
 void main(List<String> args) {
+  print('\$ dart --enable-experiment=non-nullable example/bin/example.dart');
+  print('(Exceptions are caught and displayed ...\n');
+
   // Catching an ExceptionOf<A>.
   try {
     a.setUp();
@@ -72,4 +75,7 @@ void main(List<String> args) {
     print('${CYAN}DEMO only, errors should never be caught!');
     print(e);
   }
+
+  print('${GREEN}Completed successfully.${RESET}');
+  print('Exiting with code 0.');
 }

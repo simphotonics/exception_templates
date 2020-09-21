@@ -4,9 +4,9 @@ import '../utils/color_options.dart';
 /// The type argument hints at **where** the exception occured.
 class ExceptionOf<T> implements Exception {
   ExceptionOf({
-    this.message,
-    this.invalidState,
-    this.expectedState,
+    this.message = '',
+    this.invalidState = '',
+    this.expectedState = '',
   });
 
   /// Message added when the error is thrown.
