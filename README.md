@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)
 
+
+## Update
+
+Version [`exception_templates 0.1.0`][exception_templates] introduces null-safety features.
+
 ## Introduction
 
 When handling a program exception, the two main concerns are in what *context*
