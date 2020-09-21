@@ -1,16 +1,16 @@
 import 'dart:math';
 
-import 'package:exception_templates/exception_templates.dart';
-import 'package:test/test.dart';
+import 'package:exception_templates/exception_templates.dart' as et;
+import 'package:minimal_test/minimal_test.dart';
+import 'package:minimal_test/src/utils/color_options.dart';
 
 // Defining error/exception types:
-class FailedToSerializeObject extends ErrorType {}
+class FailedToSerializeObject extends et.ErrorType {}
 
-class InvalidDataFound extends ExceptionType {}
+class InvalidDataFound extends et.ExceptionType {}
 
 class Complex<T extends num> {
-  Complex([this.real, this.imag]);
-
+  Complex(this.real, this.imag);
   T real;
   T imag;
 }
@@ -22,7 +22,7 @@ extension Constants<T extends num> on Complex<T> {
   }
 
   double angle() {
-    throw ExceptionOf<Complex>(
+    throw et.ExceptionOf<Complex>(
       message: 'Method angle not implemented',
     );
   }
@@ -32,8 +32,8 @@ void main() {
   group('ExceptionOf:', () {
     test('<Complex>', () {
       try {
-        Complex().angle();
-      } on ExceptionOf<Complex> catch (e) {
+        Complex(0.0, -0.5).angle();
+      } on et.ExceptionOf<Complex> catch (e) {
         expect(e.typeArgument, Complex);
       } catch (e) {
         throw Exception('Exception should have been caught already!');
@@ -41,20 +41,22 @@ void main() {
     });
     test('<String>', () {
       try {
-        throw ExceptionOf<String>();
-      } on ExceptionOf<String> catch (e) {
+        throw et.ExceptionOf<String>();
+      } on et.ExceptionOf<String> catch (e) {
         expect(e.typeArgument, String);
       }
     });
     test('Testing colour output', () {
-      ExceptionOf.colorOutput = ColorOutput.OFF;
+      et.ExceptionOf.colorOutput = et.ColorOutput.OFF;
       expect(
-          ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
+          et.ExceptionOf<Complex>()
+              .toString()
+              .substring(0, 'ExceptionOf'.length),
           'ExceptionOf',
           reason: 'Message starts with the exception type '
               'if colour output is turned off.');
-      ExceptionOf.colorOutput = ColorOutput.ON;
-      expect(ExceptionOf<Complex>().toString().substring(0, RED.length), RED,
+      et.ExceptionOf.colorOutput = et.ColorOutput.ON;
+      expect(et.ExceptionOf<Complex>().toString().substring(0, RED.length), RED,
           reason: 'Message start with the colour code '
               'if colour output is turned on');
     });
@@ -63,12 +65,12 @@ void main() {
   group('ExceptionOfType:', () {
     test('<InvalidDataFound>', () {
       try {
-        throw ExceptionOfType<InvalidDataFound>();
-      } on ExceptionOfType catch (e) {
+        throw et.ExceptionOfType<InvalidDataFound>();
+      } on et.ExceptionOfType catch (e) {
         expect(e.typeArgument, InvalidDataFound);
-        expect(e.message, null);
-        expect(e.invalidState, null);
-        expect(e.expectedState, null);
+        expect(e.message, '');
+        expect(e.invalidState, '');
+        expect(e.expectedState, '');
       } catch (e) {
         throw Exception('Exception should have been caught already!');
       }
@@ -77,14 +79,14 @@ void main() {
   group('ErrorOf:', () {
     test('<Complex>', () {
       final zero = Complex(0, 0);
-      final invalid = Complex(0, null);
+      final invalid = Complex(0, 0.0);
       try {
-        throw ErrorOf<Complex>(
+        throw et.ErrorOf<Complex>(
           message: 'Error',
           invalidState: invalid,
           expectedState: zero,
         );
-      } on ErrorOf<Complex> catch (e) {
+      } on et.ErrorOf<Complex> catch (e) {
         expect(e.typeArgument, Complex);
         expect(e.message, 'Error');
         expect(e.invalidState, invalid);
@@ -98,12 +100,13 @@ void main() {
   group('ErrorOfType:', () {
     test('<FailedToSerializeObject>', () {
       try {
-        throw ErrorOfType<FailedToSerializeObject>();
-      } on ErrorOfType catch (e) {
+        throw et.ErrorOfType<FailedToSerializeObject>(
+            message: 'Serialization failed.');
+      } on et.ErrorOfType catch (e) {
         expect(e.typeArgument, FailedToSerializeObject);
-        expect(e.message, null);
-        expect(e.invalidState, null);
-        expect(e.expectedState, null);
+        expect(e.message, 'Serialization failed.');
+        expect(e.invalidState, '');
+        expect(e.expectedState, '');
       } catch (e) {
         throw Exception('Error should have been caught already!');
       }
