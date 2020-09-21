@@ -1,3 +1,6 @@
+## 0.1.0
+Enabled null-safety. Testing now uses `minimal_test`.
+
 ## 0.0.6
 
 Added dev_dependency on package `pedantic`. Applied linter suggestions.
