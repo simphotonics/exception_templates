@@ -1,3 +1,7 @@
+## 0.1.1-nullsafety
+
+- Min. Dart SDK version is now 2.10.0.
+
 ## 0.1.0-nullsafety
 Enabled null-safety. Testing now uses `minimal_test`.
 
