@@ -3,15 +3,15 @@ name: exception_templates
 description: Provides parameterized exception and error templates. Enables
   throwing specific error objects without the need to define exception classes.
 
-version: 0.1.1-nullsafety
+version: 0.1.3-nullsafety
 
 homepage: https://github.com/simphotonics/exception_templates
 
 environment:
   sdk: '>=2.10.0 <3.0.0'
 
-dependencies:
+dependencies: null
 
 dev_dependencies:
+  minimal_test: ^0.1.2-nullsafety
   pedantic: ^1.9.2
-  minimal_test: ^0.1.0-nullsafety

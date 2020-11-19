@@ -1,3 +1,7 @@
+## 0.1.2-nullsafety
+
+Amended README.md.
+
 ## 0.1.1-nullsafety
 
 - Min. Dart SDK version is now 2.10.0.
