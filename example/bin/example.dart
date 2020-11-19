@@ -61,7 +61,7 @@ void main(List<String> args) {
         message: 'Something went wrong with class B.',
         expectedState: 'data > 0.',
         invalidState: 'data == null');
-  } on ExceptionOfType catch (e) {
+  } on ExceptionOfType<InvalidDataFound> catch (e) {
     print('// Switching of colour output.');
     print(e);
   } on ExceptionOf<A> catch (e) {
