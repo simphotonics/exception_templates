@@ -10,9 +10,10 @@ did it occur and what *type* of exception occured.
 
 The library [`exception_templates`][exception_templates] provides
 parameterized classes that allow throwing and catching exceptions characterized
-by their type argument.
+by their **type argument**.
 
-Using parameterized exceptions eliminates the need to define library or class specific exceptions and enables filtering exceptions based on their type argument.
+Using parameterized exceptions eliminates the need to define library or class specific exceptions
+and enables filtering caught exceptions based on their type argument.
 
 To highlight the exception **context** use:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and
@@ -44,6 +45,7 @@ class InvalidDataFound extends ExceptionType{}
 class A {
   Object data;
   // Throwing a parameterized exception.
+  // The type argument <A> highlights where the exception occurred.
   void setUp() {
     data = List<int>.filled(3, 37);
     throw ExceptionOf<A>(
@@ -53,6 +55,8 @@ class A {
   }
 
   // Throwing a parameterized error.
+  // The type argument <FailedToSerializeObject> highlights
+  // what kind of error occurred.
   void tearDown() {
     throw ErrorOfType<FailedToSerializeObject>(
         message: 'An error occured in tearDown().',
@@ -69,6 +73,7 @@ class B {
 
 final a = A();
 
+// Executable ------------------------------------------
 main(List<String> args) {
   // Catching an ExceptionOf<A>.
   try {
@@ -87,7 +92,7 @@ main(List<String> args) {
         message: 'Something went wrong with class B.',
         expectedState: 'data > 0.',
         invalidState: 'data == null');
-  } on ExceptionOfType catch (e) {
+  } on ExceptionOfType<InvalidDataFound> catch (e) {
     print('// Switching of colour output.');
     print(e);
   } on ExceptionOf<A> catch (e) {
