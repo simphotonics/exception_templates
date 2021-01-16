@@ -1,3 +1,7 @@
+## 0.1.3-nullsafety
+
+- Updated dependencies. 
+
 ## 0.1.2-nullsafety
 
 Amended README.md.
