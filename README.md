@@ -27,12 +27,11 @@ To emphasise the exception **type** use:
 ## Usage
 
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
+Colour output can be globally enabled or disabled by setting the static field `colorOutput`
+to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
 
 The program below demonstrates how
-to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
-Colour output can be globally enabled or disabled by setting the static field `colorOutput`
-to `ColorOutput.ON` or `ColorOutput.OFF`, respectively,
-
+to throw and catch objects of type `ErrorOfType<T>` and `ExceptionOfType<T>` where `T` is a generic type.
 
 ```Dart
 
