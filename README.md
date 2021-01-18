@@ -115,7 +115,7 @@ A typical output produced when running the program above is shown below:
 
 ## Examples
 
-A copy of the program show in the section above can be found in the folder  [example].
+A copy of the program shown in the section above can be found in the folder  [example].
 
 
 ## Features and bugs

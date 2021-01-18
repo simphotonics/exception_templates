@@ -1,6 +1,10 @@
+## 0.2.0-nullsafety
+
+- Removed references to option `--enable-experiment=non-nullable`.
+
 ## 0.1.3-nullsafety
 
-- Updated dependencies. 
+- Updated dependencies.
 
 ## 0.1.2-nullsafety
 

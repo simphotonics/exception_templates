@@ -35,7 +35,7 @@ echo
 echo -e "${BLUE}=== Analyzing $PWD...${RESET}"
 echo
 
-dartanalyzer --enable-experiment=non-nullable \
+dartanalyzer \
     --fatal-warnings \
     --fatal-infos \
     --packages="$PWD/.packages" \
@@ -46,7 +46,7 @@ echo
 echo -e "${CYAN}=== Testing $PWD...${RESET}"
 echo
 
-pub run --enable-experiment=non-nullable minimal_test:minimal_test.dart
+pub run minimal_test:minimal_test.dart
 
 # ================
 # Running examples
@@ -55,4 +55,4 @@ echo
 echo -e "${GREEN}=== Running examples in $PWD/example/bin ...${RESET}"
 echo
 
-dart --enable-experiment=non-nullable example/bin/example.dart
+dart example/bin/example.dart
