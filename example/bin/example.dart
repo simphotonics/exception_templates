@@ -26,8 +26,6 @@ extension Subtraction on List<num> {
 }
 
 void main(List<String> args) {
-  print('\$ dart example/bin/example.dart');
-
   final a = [1, 2];
   final b = [3, 4];
   final c = [...b, 5];
@@ -52,7 +50,4 @@ void main(List<String> args) {
     userFeedback = '${e.message} User did not leave a message.';
     print('Feedback: $userFeedback\n');
   }
-
-  print('${GREEN}Completed successfully.${RESET}');
-  print('Exiting with code 0.\n');
 }
