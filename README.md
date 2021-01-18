@@ -87,7 +87,7 @@ void main(List<String> args) {
 
 ```
 A typical output produced when running the program above is shown below:
-![Console Output](https://raw.githubusercontent.com/simphotonics/exception_templates/master/images/console_output.svg?sanitize=true)
+![Console Output](https://github.com/simphotonics/exception_templates/blob/null_safety/images/console_output.svg)
 
 
 ## Examples
