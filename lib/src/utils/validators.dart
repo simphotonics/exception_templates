@@ -84,7 +84,7 @@ String classNameToLibraryName(String className) {
   return libraryName.toLowerCase();
 }
 
-/// Returns [true] if [input] is valid Dart variable identifier.
+/// Returns `true` if [input] is valid Dart variable identifier.
 bool isValidIdentifier(String input) {
   // Contains only valid characters and starts with a non-numeric character.
   final regExp = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*');
@@ -97,7 +97,7 @@ bool isValidIdentifier(String input) {
   }
 }
 
-/// Throws [GeneratorError] is input is not a valid Dart identifier.
+/// Throws an `ErrorOfType<InvalidIdentifier>` if [input] is not a valid Dart identifier.
 void validateIdentifier(String input) {
   if (!isValidIdentifier(input)) {
     throw ErrorOfType<InvalidIdentifier>(
