@@ -1,17 +1,18 @@
 name: exception_templates
 
 description: Parameterized exception and error templates for Dart. Enables
-  throwing and catching exception/error objects that are defined by their type argument.
+  throwing and catching exception/error objects that are defined by their type
+  argument.
 
-version: 0.2.0-nullsafety
+version: 0.2.0
 
 homepage: https://github.com/simphotonics/exception_templates
 
 environment:
-  sdk: '>=2.12.0-0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies: null
 
 dev_dependencies:
-  minimal_test: ^2.0.1-nullsafety
-  pedantic: ^1.9.2
+  pedantic: ^1.11.0
+  test: ^1.16.5

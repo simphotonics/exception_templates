@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Switched back to default test suite.
+
 ## 0.2.0-nullsafety
 
 - Removed references to option `--enable-experiment=non-nullable`.
