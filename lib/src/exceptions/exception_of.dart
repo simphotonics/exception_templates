@@ -1,12 +1,12 @@
 import '../utils/color_options.dart';
 
 /// Parameterized exception class.
-/// The type argument hints at **where** the exception occured.
+/// The type argument indicates in which context the exception occured.
 class ExceptionOf<T> implements Exception {
   ExceptionOf({
-    this.message,
-    this.invalidState,
-    this.expectedState,
+    this.message = '',
+    this.invalidState = '',
+    this.expectedState = '',
   });
 
   /// Message added when the error is thrown.

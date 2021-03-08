@@ -1,3 +1,23 @@
+## 0.2.0-nullsafety
+
+- Removed references to option `--enable-experiment=non-nullable`.
+
+## 0.1.3-nullsafety
+
+- Updated dependencies.
+
+## 0.1.2-nullsafety
+
+Amended README.md.
+
+## 0.1.1-nullsafety
+
+- Min. Dart SDK version is now 2.10.0.
+
+## 0.1.0-nullsafety
+
+Enabled null-safety. Testing now uses `minimal_test`.
+
 ## 0.0.6
 
 Added dev_dependency on package `pedantic`. Applied linter suggestions.

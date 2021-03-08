@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)
 
+
 ## Introduction
 
 When handling a program exception, the two main concerns are in what *context*
@@ -9,9 +10,10 @@ did it occur and what *type* of exception occured.
 
 The library [`exception_templates`][exception_templates] provides
 parameterized classes that allow throwing and catching exceptions characterized
-by their type argument.
+by their **type argument**.
 
-Using parameterized exceptions eliminates the need to define library or class specific exceptions and enables filtering exceptions based on their type argument.
+Using parameterized exceptions eliminates the need to define library or class specific exceptions
+and enables filtering caught exceptions based on their type argument.
 
 To highlight the exception **context** use:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and
@@ -25,91 +27,71 @@ To emphasise the exception **type** use:
 ## Usage
 
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
+Colour output can be globally enabled or disabled by setting the static field `colorOutput`
+to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
 
 The program below demonstrates how
-to throw and catch objects of type `ExceptionOf<T>` where `T` is a generic type.
-Colour output can be globally enabled or disabled by setting the static field `colorOutput`
-to `ColorOutput.ON` or `ColorOutput.OFF`, respectively,
-
+to throw and catch objects of type `ErrorOfType<T>` and `ExceptionOfType<T>` where `T` is a generic type.
 
 ```Dart
+
 import 'package:exception_templates/exception_templates.dart';
 
-// Defining error/exception types:
-class FailedToSerializeObject extends ErrorType{}
-class InvalidDataFound extends ExceptionType{}
+// Defining error types:
+class LengthMismatch extends ErrorType {}
 
-// Test class A.
-class A {
-  Object data;
-  // Throwing a parameterized exception.
-  void setUp() {
-    data = List<int>.filled(3, 37);
-    throw ExceptionOf<A>(
-        message: 'Set up failed.',
-        expectedState: 'A complete set of adapters.',
-        invalidState: 'Adapter x078 is missing.');
-  }
+// Defining exception types:
+class EmptyUserInput extends ExceptionType {}
 
-  // Throwing a parameterized error.
-  void tearDown() {
-    throw ErrorOfType<FailedToSerializeObject>(
-        message: 'An error occured in tearDown().',
-        expectedState: 'All objects are serialized and stored.',
-        invalidState: 'Failed to serialize object $data.');
+extension Subtraction on List<num> {
+  /// Subtracts two numerical lists of same length.
+  List<num> operator -(List<num> other) {
+    if (length != other.length) {
+      throw ErrorOfType<LengthMismatch>(
+          message: 'Could not calculate: $this - $other.',
+          invalidState: 'Length of $this does not match length of $other.',
+          expectedState: 'Two operands with the same length.');
+    }
+    return List<num>.generate(length, (i) => this[i] - other[i]);
   }
 }
 
-// Test class B.
-class B {
-  B(this.data);
-  final int data;
-}
+void main(List<String> args) {
+  final a = [1, 2];
+  final b = [3, 4];
+  final c = [...b, 5];
 
-final a = A();
-
-main(List<String> args) {
-  // Catching an ExceptionOf<A>.
+  // Catching an ErrorOfType<LenghtMismatch>.
+  // Demo only! Errors should not be caught, while exceptions should be caught.
   try {
-    a.setUp();
-  } on ExceptionOf<A> catch (e) {
+    print('b - a = ${b - a}');
+    print('c - b = ${c - b}');
+  } on ErrorOfType<LengthMismatch> catch (e) {
     print(e);
   }
 
-  // Turning off colour output globally.
-  ExceptionOf.colorOutput = ColorOutput.OFF;
-
-  // Catching an ExceptionOfType<InvalidDataFound>.
-  // Colour output is switched off.
+  // Catching an ExceptionOfType<EmptyUserFeedback>.
+  var userFeedback = '';
   try {
-    throw ExceptionOfType<InvalidDataFound>(
-        message: 'Something went wrong with class B.',
-        expectedState: 'data > 0.',
-        invalidState: 'data == null');
-  } on ExceptionOfType catch (e) {
-    print('// Switching of colour output.');
-    print(e);
-  } on ExceptionOf<A> catch (e) {
-    print('Should not reach here! $e');
-  }
-
-  // Throwing and catching an ErrorOfType<FailedToSerializeObject>.
-  try {
-    a.tearDown();
-  } on ErrorOfType<FailedToSerializeObject> catch (e) {
-    print('${CYAN}DEMO only, errors should never be caught!');
-    print(e);
+    throw ExceptionOfType<EmptyUserInput>(
+      message: 'Could not process user feedback.',
+      expectedState: 'A non-empty String.',
+    );
+  } on ExceptionOfType<EmptyUserInput> catch (e) {
+    userFeedback = '${e.message} User did not leave a message.';
+    print('Feedback: $userFeedback\n');
   }
 }
+
 
 ```
 A typical output produced when running the program above is shown below:
-![Console Output](https://raw.githubusercontent.com/simphotonics/exception_templates/master/images/console_output.svg?sanitize=true)
+![Console Output](https://github.com/simphotonics/exception_templates/blob/null_safety/images/console_output.svg)
 
 
 ## Examples
 
-A copy of the program show in the section above can be found in the folder  [example].
+A copy of the program shown in the section above can be found in the folder  [example].
 
 
 ## Features and bugs

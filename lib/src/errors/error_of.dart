@@ -2,12 +2,12 @@ import '../utils/color_options.dart';
 
 /// Parameterized error template.
 ///
-/// The generic type `T` hints at **where** the error occured.
+/// The generic type `T` indicates in which context the error occured.
 class ErrorOf<T> extends Error {
   ErrorOf({
-    this.message,
-    this.invalidState,
-    this.expectedState,
+    this.message = '',
+    this.invalidState = '',
+    this.expectedState = '',
   });
 
   /// Message added when the error is thrown.

@@ -44,6 +44,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'in',
   'interface',
   'is',
+  'late',
   'library',
   'mixin',
   'new',
@@ -51,6 +52,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'on',
   'operator',
   'part',
+  'required',
   'rethrow',
   'return',
   'set',
@@ -75,16 +77,15 @@ final dartKeywords = UnmodifiableListView<String>([
 /// to a lower case underscore separated Dart library name.
 String classNameToLibraryName(String className) {
   final pattern = RegExp(r'(?<=[a-z])[A-Z]');
-  final libraryName = className?.replaceAllMapped(
+  final libraryName = className.replaceAllMapped(
     pattern,
     (Match m) => '_${m[0]}',
   );
-  return libraryName?.toLowerCase();
+  return libraryName.toLowerCase();
 }
 
 /// Returns [true] if [input] is valid Dart variable identifier.
 bool isValidIdentifier(String input) {
-  if (input == null) return false;
   // Contains only valid characters and starts with a non-numeric character.
   final regExp = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*');
   final match = regExp.stringMatch(input);

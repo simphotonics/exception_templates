@@ -13,9 +13,9 @@ import 'exception_of.dart';
 /// ```
 class ExceptionOfType<T extends ExceptionType> extends ExceptionOf<T> {
   ExceptionOfType({
-    Object message,
-    Object invalidState,
-    Object expectedState,
+    Object message = '',
+    Object invalidState = '',
+    Object expectedState = '',
   }) : super(
           message: message,
           invalidState: invalidState,
