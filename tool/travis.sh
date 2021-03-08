@@ -46,7 +46,7 @@ echo
 echo -e "${CYAN}=== Testing $PWD...${RESET}"
 echo
 
-pub run minimal_test:minimal_test.dart
+pub run test
 
 # ================
 # Running examples

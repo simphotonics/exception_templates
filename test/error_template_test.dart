@@ -1,8 +1,8 @@
 import 'dart:math';
 
+import 'package:test/test.dart';
+
 import 'package:exception_templates/exception_templates.dart' as et;
-import 'package:minimal_test/minimal_test.dart';
-import 'package:minimal_test/src/utils/color_options.dart';
 
 // Defining error/exception types:
 class FailedToSerializeObject extends et.ErrorType {}
@@ -56,9 +56,12 @@ void main() {
           reason: 'Message starts with the exception type '
               'if colour output is turned off.');
       et.ExceptionOf.colorOutput = et.ColorOutput.ON;
-      expect(et.ExceptionOf<Complex>().toString().substring(0, RED.length), RED,
-          reason: 'Message start with the colour code '
-              'if colour output is turned on');
+      expect(
+        et.ExceptionOf<Complex>().toString().substring(0, et.RED.length),
+        et.RED,
+        reason: 'Message start with the colour code '
+            'if colour output is turned on',
+      );
     });
   });
 
