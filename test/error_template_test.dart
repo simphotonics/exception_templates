@@ -49,9 +49,7 @@ void main() {
     test('Testing colour output', () {
       ExceptionOf.colorOutput = ColorOutput.OFF;
       expect(
-          ExceptionOf<Complex>()
-              .toString()
-              .substring(0, 'ExceptionOf'.length),
+          ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
           'ExceptionOf',
           reason: 'Message starts with the exception type '
               'if colour output is turned off.');
