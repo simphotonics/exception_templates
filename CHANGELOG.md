@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Migrated CI to github.
+
 ## 0.2.0
 
 - Switched back to default test suite.
