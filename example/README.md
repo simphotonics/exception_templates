@@ -1,8 +1,7 @@
-
-
-
 ## Exception Templates: Example
-[![Build Status](https://travis-ci.com/simphotonics/exception_templates.svg?branch=master)](https://travis-ci.com/simphotonics/exception_templates)
+
+[![Dart](https://github.com/simphotonics/exception_templates/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/exception_templates/actions/workflows/dart.yml)
+
 
 The program [example.dart][example] can be run in a terminal by navigating to *root* folder
 in your local copy of the package [`exception_templates`](https://pub.dev/packages/exception_templates)
