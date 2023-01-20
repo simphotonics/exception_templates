@@ -1,8 +1,7 @@
 name: exception_templates
 
-description: Parameterized exception and error templates for Dart. Enables
-  throwing and catching exception/error objects that are defined by their type
-  argument.
+description: Exception and error templates with generic type for Dart. Enables
+  throwing, catching, and filtering custom exceptions based on their type argument.
 
 version: 0.2.2
 
