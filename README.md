@@ -4,16 +4,19 @@
 
 
 ## Introduction
-
 When handling a program exception, the two main concerns are in what *context*
-did it occur and what *type* of exception occured.
+did it occur and what *kind* of exception occured.
+For this reason, most Dart projects include custom error and exception classes that
+implement [`Error`][Error] or [`Exception`][Exception].
+
+Using exceptions with parameterized type eliminates the
+need to define library or class specific errors/exceptions.
+
 
 The library [`exception_templates`][exception_templates] provides
-parameterized classes that allow throwing and catching exceptions characterized
+parameterized classes that allow throwing errors/exceptions and filtering caught exceptions characterized
 by their **type argument**.
 
-Using parameterized exceptions eliminates the need to define library or class specific exceptions
-and enables filtering caught exceptions based on their type argument.
 
 To highlight the exception **context** use:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and
@@ -101,6 +104,10 @@ Please file feature requests and bugs at the [issue tracker].
 [issue tracker]: https://github.com/simphotonics/exception_templates/issues
 
 [example]: example
+
+[Error]: https://api.dart.dev/stable/dart-core/Error-class.html
+
+[Exception]: https://api.dart.dev/stable/dart-core/Exception-class.html
 
 [ExceptionOf<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ExceptionOf-class.html
 
