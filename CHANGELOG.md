@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Amended docs and analysis options. 
+
 ## 0.2.1
 
 - Migrated CI to github.
