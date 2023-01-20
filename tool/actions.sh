@@ -18,35 +18,33 @@ echo -e "${BLUE}=== Resolving dependencies $PWD...${RESET}"
 echo
 
 # Make sure .dart_tool/package_config.json exists.
-pub get
+dart pub get
 
 # Upgrade packages.
-pub upgrade
+dart pub upgrade
 
 echo
 echo -e "${PURPLE}=== Checking Source Code Formatting${RESET} $PWD..."
 echo
 # Overwrite files with formatted content: -w
 # Dry run: -n
-dartfmt -w $(find bin lib test -name \*.dart 2>/dev/null)
+dart format lib test example
 
 # Analyze dart files
 echo
 echo -e "${BLUE}=== Analyzing $PWD...${RESET}"
 echo
 
-dartanalyzer \
+dart analyze \
     --fatal-warnings \
-    --fatal-infos \
-    --packages="$PWD/.packages" \
-    $(find bin lib test example -name \*.dart 2>/dev/null)
+    --fatal-infos
 
 # Running tests
 echo
 echo -e "${CYAN}=== Testing $PWD...${RESET}"
 echo
 
-pub run test
+dart test
 
 # ================
 # Running examples
@@ -56,3 +54,5 @@ echo -e "${GREEN}=== Running examples in $PWD/example/bin ...${RESET}"
 echo
 
 dart example/bin/example.dart
+
+echo -e "${GREEN}---      Script has exited sucessfully.     ---"
