@@ -53,6 +53,6 @@ echo
 echo -e "${GREEN}=== Running examples in $PWD/example/bin ...${RESET}"
 echo
 
-dart example/bin/example.dart
+dart example/bin/exception_example.dart
 
 echo -e "${GREEN}---      Script has exited sucessfully.     ---"
