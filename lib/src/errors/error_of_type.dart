@@ -1,5 +1,5 @@
 import '../error_types/error_type.dart';
-import 'error_of.dart';
+import '../utils/color_options.dart';
 
 /// Parameterized error template.
 ///
@@ -12,14 +12,34 @@ import 'error_of.dart';
 /// // Throwing an error of type [ErrorType].
 /// throw ErrorOfType<SerializationFailed>;
 /// ```
-class ErrorOfType<T extends ErrorType> extends ErrorOf<T> {
+class ErrorOfType<T extends ErrorType> extends Error {
   ErrorOfType({
-    Object message = '',
-    Object invalidState = '',
-    Object expectedState = '',
-  }) : super(
-          message: message,
-          invalidState: invalidState,
-          expectedState: expectedState,
-        );
+    this.message = '',
+    this.invalidState = '',
+    this.expectedState = '',
+  });
+
+  /// Optional message added when the error is thrown.
+  final Object message;
+
+  /// Generic object conveying information about the invalid state.
+  final Object invalidState;
+
+  /// Generic object conveying information about an expected state.
+  final Object expectedState;
+
+  /// Set to `ColorOutput.ON` to enable color output to terminal.
+  static ColorOutput colorOutput = ColorOutput.ON;
+
+  /// Type argument of the error class.
+  Type get typeArgument => T;
+
+  @override
+  String toString() => toColorString(
+        colorOutput: colorOutput,
+        message: message,
+        expectedState: expectedState,
+        invalidState: invalidState,
+        errorType: runtimeType,
+      );
 }
