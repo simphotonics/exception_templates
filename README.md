@@ -4,47 +4,97 @@
 
 
 ## Introduction
-When handling a program exception, the two main concerns are in what *context*
-did it occur and what *kind* of exception occured.
-For this reason, most Dart projects include custom error and exception classes that
-implement [`Error`][Error] or [`Exception`][Exception].
 
-Using exceptions with parameterized type eliminates the
-need to define library or class specific errors/exceptions.
+While it is possible to throw any object in Dart, production code typically
+custom error and exception classes that
+implement [`Error`][Error] and [`Exception`][Exception], respectively.
 
-
+An alternative approach consists in using exceptions with parameterized type.
 The library [`exception_templates`][exception_templates] provides
 parameterized classes that allow throwing errors/exceptions and filtering caught exceptions characterized
 by their **type argument**.
 
+In the following sections the term *exception* stands for exception/error
+with the understanding that in general exceptions should be handled while errors should lead to the
+termination of the program.
 
-To highlight the exception **context** use:
+
+
+## Usage
+To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
+
+To highlight the **context** in which the exception/error occured use:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and
-* [`ErrorOf<T>`][ErrorOf<T>]. In this case, the type argument hints at *where* the exception occured.
+* [`ErrorOf<T>`][ErrorOf<T>].
+Hereby, the type argument should indicate that the exception occured within a method of the class `T`.
+In this case, there is no need to define class specific exceptions. See example below.
+
+```Dart
+// To run this program navigate to the root of your local copy of the
+// package exception_templates and use
+//
+// # dart example/bin/exception_example.dart
+//
+// followed by enter.
+import 'package:exception_templates/exception_templates.dart';
+
+/// Returns the variable t afer some time. Used to simulate a database or
+/// network connection.
+Future<T> later<T>(T t) async {
+  return await Future.delayed(Duration(milliseconds: 200), () => t);
+}
+
+/// Sample class
+class UserForm {
+  const UserForm(this.userName);
+
+  final String userName;
+
+  /// Simulates fetching user feedback from a database or network connection.
+  Future<String> fetchFeedback() async {
+    final feedback = await later('');
+    if (feedback.isEmpty) {
+      throw ExceptionOf<UserForm>(
+        message: 'Could not process $userName\'s feedback.',
+        invalidState: 'String found: $feedback',
+        expectedState: 'A non-empty String.',
+      );
+    }
+    return feedback;
+  }
+}
+
+void main(List<String> args) async {
+  final userForm = UserForm('Daniel');
+  try {
+    final userFeedback = await userForm.fetchFeedback();
+    print(userFeedback);
+  } on ExceptionOf<UserForm> catch (e) {
+    final userFeedback = e.message;
+    print('Feedback: $userFeedback\n');
+  }
+}
+
+```
 
 To emphasise the exception **type** use:
 * [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
 * [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
 
-
-## Usage
-
-To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
-Colour output can be globally enabled or disabled by setting the static field `colorOutput`
-to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
-
 The program below demonstrates how
-to throw and catch objects of type `ErrorOfType<T>` and `ExceptionOfType<T>` where `T` is a generic type.
+to throw an error of type `ErrorOfType<LengthMismatch>`.
 
 ```Dart
-
+// To run this program navigate to the root of your local copy of the
+// package exception_templates and use
+//
+// # dart example/bin/error_example.dart
+//
+// followed by enter.
 import 'package:exception_templates/exception_templates.dart';
 
 // Defining error types:
 class LengthMismatch extends ErrorType {}
-
-// Defining exception types:
-class EmptyUserInput extends ExceptionType {}
 
 extension Subtraction on List<num> {
   /// Subtracts two numerical lists of same length.
@@ -63,34 +113,16 @@ void main(List<String> args) {
   final a = [1, 2];
   final b = [3, 4];
   final c = [...b, 5];
-
-  // Catching an ErrorOfType<LenghtMismatch>.
-  // Demo only! Errors should not be caught, while exceptions should be caught.
-  try {
-    print('b - a = ${b - a}');
-    print('c - b = ${c - b}');
-  } on ErrorOfType<LengthMismatch> catch (e) {
-    print(e);
-  }
-
-  // Catching an ExceptionOfType<EmptyUserFeedback>.
-  var userFeedback = '';
-  try {
-    throw ExceptionOfType<EmptyUserInput>(
-      message: 'Could not process user feedback.',
-      expectedState: 'A non-empty String.',
-    );
-  } on ExceptionOfType<EmptyUserInput> catch (e) {
-    userFeedback = '${e.message} User did not leave a message.';
-    print('Feedback: $userFeedback\n');
-  }
+  print('b - a = ${b - a}');
+  print('c - b = ${c - b}');
 }
 
-
 ```
-A typical output produced when running the program above is shown below:
+A typical output produced when running the program above is displayed below (the stack trace is not shown):
 ![Console Output](https://github.com/simphotonics/exception_templates/blob/main/images/console_output.svg?sanitize=true)
 
+Colour output can be globally enabled or disabled by setting the static field `colorOutput`
+to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
 
 ## Examples
 
