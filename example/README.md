@@ -11,4 +11,4 @@ The programs in the folder [example][example] demonstrate the use of errors and 
 Please file feature requests and bugs at the [issue tracker].
 
 [issue tracker]: https://github.com/simphotonics/exception_templates/issues
-[example]: example
+[example]: https://github.com/simphotonics/exception_templates/tree/main/example
