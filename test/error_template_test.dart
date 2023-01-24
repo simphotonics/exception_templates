@@ -46,7 +46,7 @@ void main() {
         expect(e.typeArgument, String);
       }
     });
-    test('Testing colour output', () {
+    test('Testing colour output ExceptionOf', () {
       ExceptionOf.colorOutput = ColorOutput.OFF;
       expect(
           ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
@@ -56,6 +56,23 @@ void main() {
       ExceptionOf.colorOutput = ColorOutput.ON;
       expect(
         ExceptionOf<Complex>().toString().substring(0, RED.length),
+        RED,
+        reason: 'Message start with the colour code '
+            'if colour output is turned on',
+      );
+    });
+    test('Testing colour output ExceptionOfType', () {
+      ExceptionOfType.colorOutput = ColorOutput.OFF;
+      expect(
+          ExceptionOfType<InvalidDataFound>()
+              .toString()
+              .substring(0, 'ExceptionOfType'.length),
+          'ExceptionOfType',
+          reason: 'Message starts with the exception type '
+              'if colour output is turned off.');
+      ExceptionOfType.colorOutput = ColorOutput.ON;
+      expect(
+        ExceptionOfType<InvalidDataFound>().toString().substring(0, RED.length),
         RED,
         reason: 'Message start with the colour code '
             'if colour output is turned on',
