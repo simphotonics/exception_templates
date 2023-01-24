@@ -5,9 +5,9 @@
 
 ## Introduction
 
-While it is possible to throw any object in Dart, production code typically
+While it is possible to throw any object in Dart, production code typically contains
 custom error and exception classes that
-implement [`Error`][Error] and [`Exception`][Exception], respectively.
+extend [`Error`][Error] and implement [`Exception`][Exception].
 
 An alternative approach consists in using exceptions with parameterized type.
 The library [`exception_templates`][exception_templates] provides
@@ -23,10 +23,9 @@ termination of the program.
 ## Usage
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
 
-To highlight the **context** in which the exception/error occured use:
-* [`ExceptionOf<T>`][ExceptionOf<T>] and
-* [`ErrorOf<T>`][ErrorOf<T>].
-Hereby, the type argument should indicate that the exception occured within a method of the class `T`.
+To highlight the **context** in which the exception/error occured use the classes
+[`ExceptionOf<T>`][ExceptionOf<T>] and [`ErrorOf<T>`][ErrorOf<T>].
+Hereby, the type argument indicates that the exception occured within a method of the class `T`.
 In this case, there is no need to define class specific exceptions. See example below.
 
 ```Dart
@@ -121,12 +120,12 @@ void main(List<String> args) {
 A typical output produced when running the program above is displayed below (the stack trace is not shown):
 ![Console Output](https://github.com/simphotonics/exception_templates/blob/main/images/console_output.svg?sanitize=true)
 
-Colour output can be globally enabled or disabled by setting the static field `colorOutput`
+Note: Colour output can be globally enabled or disabled by setting the static variable `colorOutput`
 to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
 
 ## Examples
 
-A copy of the program shown in the section above can be found in the folder  [example].
+A copy of the programs shown in the section above can be found in the folder  [example].
 
 
 ## Features and bugs
