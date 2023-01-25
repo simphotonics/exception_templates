@@ -35,7 +35,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'final',
   'finally',
   'for',
-  'Function',
+  'function',
   'get',
   'hide',
   'if',
@@ -73,6 +73,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'yield',
 ]);
 
+
 /// Converts a capital camel case Dart class name
 /// to a lower case underscore separated Dart library name.
 String classNameToLibraryName(String className) {
@@ -84,7 +85,7 @@ String classNameToLibraryName(String className) {
   return libraryName.toLowerCase();
 }
 
-/// Returns `true` if [input] is valid Dart variable identifier.
+/// Returns `true` if [input] is a valid Dart variable identifier.
 bool isValidIdentifier(String input) {
   // Contains only valid characters and starts with a non-numeric character.
   final regExp = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*');
@@ -97,7 +98,8 @@ bool isValidIdentifier(String input) {
   }
 }
 
-/// Throws an `ErrorOfType<InvalidIdentifier>` if [input] is not a valid Dart identifier.
+/// Throws an `ErrorOfType<InvalidIdentifier>` if [input] is not a
+/// valid Dart identifier.
 void validateIdentifier(String input) {
   if (!isValidIdentifier(input)) {
     throw ErrorOfType<InvalidIdentifier>(

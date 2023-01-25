@@ -118,10 +118,18 @@ void main(List<String> args) {
 
 ```
 A typical output produced when running the program above is displayed below (the stack trace is not shown):
-![Console Output](https://github.com/simphotonics/exception_templates/blob/main/images/console_output.svg?sanitize=true)
+![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.svg?sanitize=true)
+
 
 Note: Colour output can be globally enabled or disabled by setting the static variable `colorOutput`
 to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
+
+
+## Utility Functions
+
+The library includes the utility functions `validateIdentifier` and `isValidIdentifier`.
+The function `validateIdentifier` throws an error of type `ErrorOfType<InvalidIdentifier>`
+if the input is a Dart keyword or an insuitable Dart variable or function name.
 
 ## Examples
 
