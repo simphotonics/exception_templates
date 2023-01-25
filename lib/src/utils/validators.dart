@@ -73,7 +73,6 @@ final dartKeywords = UnmodifiableListView<String>([
   'yield',
 ]);
 
-
 /// Converts a capital camel case Dart class name
 /// to a lower case underscore separated Dart library name.
 String classNameToLibraryName(String className) {
