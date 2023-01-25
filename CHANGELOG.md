@@ -1,3 +1,7 @@
+## 0.2.4
+
+- Amended docs.
+
 ## 0.2.3
 
 - Changed inheritance structure. `ErrorOf<T>` and `ErrorOfType<T>` now extend `Error`,
