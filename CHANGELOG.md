@@ -1,3 +1,8 @@
+## 0.3.0
+- Applied lints, updated message formatter `toColorString`. Min. SDK version is
+  now 3.0.0.
+- Updated list of Dart reserved words.
+
 ## 0.2.4
 
 - Amended docs.

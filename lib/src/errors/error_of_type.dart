@@ -29,7 +29,7 @@ class ErrorOfType<T extends ErrorType> extends Error {
   final Object expectedState;
 
   /// Set to `ColorOutput.ON` to enable color output to terminal.
-  static ColorOutput colorOutput = ColorOutput.ON;
+  static ColorOutput colorOutput = ColorOutput.on;
 
   /// Type argument of the error class.
   Type get typeArgument => T;

@@ -47,22 +47,24 @@ void main() {
       }
     });
     test('Testing colour output ExceptionOf', () {
-      ExceptionOf.colorOutput = ColorOutput.OFF;
+      ExceptionOf.colorOutput = ColorOutput.off;
       expect(
           ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
           'ExceptionOf',
           reason: 'Message starts with the exception type '
               'if colour output is turned off.');
-      ExceptionOf.colorOutput = ColorOutput.ON;
+      ExceptionOf.colorOutput = ColorOutput.on;
       expect(
-        ExceptionOf<Complex>().toString().substring(0, RED.length),
-        RED,
+        ExceptionOf<Complex>()
+            .toString()
+            .substring(0, AnsiColor.red.code.length),
+        AnsiColor.red.code,
         reason: 'Message start with the colour code '
             'if colour output is turned on',
       );
     });
     test('Testing colour output ExceptionOfType', () {
-      ExceptionOfType.colorOutput = ColorOutput.OFF;
+      ExceptionOfType.colorOutput = ColorOutput.off;
       expect(
           ExceptionOfType<InvalidDataFound>()
               .toString()
@@ -70,10 +72,12 @@ void main() {
           'ExceptionOfType',
           reason: 'Message starts with the exception type '
               'if colour output is turned off.');
-      ExceptionOfType.colorOutput = ColorOutput.ON;
+      ExceptionOfType.colorOutput = ColorOutput.on;
       expect(
-        ExceptionOfType<InvalidDataFound>().toString().substring(0, RED.length),
-        RED,
+        ExceptionOfType<InvalidDataFound>()
+            .toString()
+            .substring(0, AnsiColor.red.code.length),
+        AnsiColor.red.code,
         reason: 'Message start with the colour code '
             'if colour output is turned on',
       );

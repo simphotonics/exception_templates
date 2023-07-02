@@ -19,7 +19,7 @@ class ExceptionOf<T> implements Exception {
   final Object expectedState;
 
   /// Whether to enable color output.
-  static ColorOutput colorOutput = ColorOutput.ON;
+  static ColorOutput colorOutput = ColorOutput.on;
 
   /// Type argument of the exception class.
   Type get typeArgument => T;

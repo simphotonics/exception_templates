@@ -4,14 +4,13 @@ description: Dart exception and error classes with generic type, useful for
   throwing, catching, and filtering custom exceptions based on their type
   argument.
 
-version: 0.2.4
+version: 0.3.0
 
 homepage: https://github.com/simphotonics/exception_templates
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
-
-dependencies: null
+  sdk: '>=3.0.0 <4.0.0'
 
 dev_dependencies:
-  test: ^1.22.2
+  lints: ^2.1.1
+  test: ^1.24.4

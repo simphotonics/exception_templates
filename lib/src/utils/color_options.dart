@@ -1,52 +1,45 @@
 library color_options;
 
-enum ColorOutput { ON, OFF }
+enum ColorOutput { on, off }
 
-/// Ansi color modifier: Reset to default.
-const String RESET = '\u001B[0m';
+/// Represents and Ansi colour.
+enum AnsiColor {
+  red('\u001B[31m'),
+  green('\u001B[32m'),
+  blue('\u001B[34m'),
+  cyan('\u001B[36m'),
+  yellow('\u001B[33m'),
+  reset('\u001B[0m');
 
-/// Ansi color modifier.
-const String BLUE = '\u001B[34m';
+  const AnsiColor(this.code);
 
-/// Ansi color modifier.
-const String CYAN = '\u001B[36m';
+  /// The String code representing the colour.
+  final String code;
+}
 
-/// Ansi color modifier.
-const String GREEN = '\u001B[32m';
-
-/// Ansi color modifier.
-const String RED = '\u001B[31m';
-
-/// Ansi color modifier.
-const String YELLOW = '\u001B[33m';
-
-/// Transforms error/exception messages to an output string.
+/// Transforms error/exception messages to a colorized output string.
 String toColorString(
     {Object message = '',
     Object expectedState = '',
     Object invalidState = '',
-    ColorOutput colorOutput = ColorOutput.ON,
+    ColorOutput colorOutput = ColorOutput.on,
     required Type errorType}) {
-  final red = (colorOutput == ColorOutput.ON) ? RED : '';
-  final reset = (colorOutput == ColorOutput.ON) ? RESET : '';
-  final green = (colorOutput == ColorOutput.ON) ? GREEN : '';
-  final yellow = (colorOutput == ColorOutput.ON) ? YELLOW : '';
+  final red = (colorOutput == ColorOutput.on) ? AnsiColor.red.code : '';
+  final reset = (colorOutput == ColorOutput.on) ? AnsiColor.reset.code : '';
+  final green = (colorOutput == ColorOutput.on) ? AnsiColor.green.code : '';
+  final yellow = (colorOutput == ColorOutput.on) ? AnsiColor.yellow.code : '';
 
   final msg = message.toString().isEmpty
       ? ''
-      : Error.safeToString(message) + reset + '\n';
+      : '${Error.safeToString(message)}$reset\n';
 
   final expected = expectedState.toString().isEmpty
       ? ''
-      : ' $green Expected state: $reset' +
-          Error.safeToString(expectedState) +
-          '\n';
+      : ' $green Expected state: $reset${Error.safeToString(expectedState)}\n';
 
   final invalid = invalidState.toString().isEmpty
       ? ''
-      : ' $yellow Invalid state: $reset' +
-          Error.safeToString(invalidState) +
-          '\n';
+      : ' $yellow Invalid state: $reset${Error.safeToString(invalidState)}\n';
 
-  return '$red$errorType: ' + msg + invalid + expected + '\n';
+  return '$red$errorType: $msg$invalid$expected\n';
 }

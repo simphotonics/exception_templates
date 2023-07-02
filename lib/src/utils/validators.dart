@@ -1,18 +1,15 @@
 /// [String] functions used by source code generators.
-library validators;
-
-import 'dart:collection' show UnmodifiableListView;
 
 import '../errors/error_of_type.dart';
 import '../error_types/invalid_identifier.dart';
 
-/// Returns a list of Dart keywords.
-final dartKeywords = UnmodifiableListView<String>([
+const reservedWords = {
   'abstract',
   'as',
   'assert',
   'async',
   'await',
+  'base',
   'break',
   'case',
   'catch',
@@ -27,7 +24,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'else',
   'enum',
   'export',
-  'extends,',
+  'extends',
   'extension',
   'external',
   'factory',
@@ -35,7 +32,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'final',
   'finally',
   'for',
-  'function',
+  'Function',
   'get',
   'hide',
   'if',
@@ -55,6 +52,7 @@ final dartKeywords = UnmodifiableListView<String>([
   'required',
   'rethrow',
   'return',
+  'sealed',
   'set',
   'show',
   'static',
@@ -68,10 +66,11 @@ final dartKeywords = UnmodifiableListView<String>([
   'typedef',
   'var',
   'void',
+  'when',
   'while',
   'with',
   'yield',
-]);
+};
 
 /// Converts a capital camel case Dart class name
 /// to a lower case underscore separated Dart library name.
@@ -90,7 +89,7 @@ bool isValidIdentifier(String input) {
   final regExp = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*');
   final match = regExp.stringMatch(input);
   if (match != input) return false;
-  if (dartKeywords.contains(input)) {
+  if (reservedWords.contains(input)) {
     return false;
   } else {
     return true;
