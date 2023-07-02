@@ -121,15 +121,26 @@ A typical output produced when running the program above is displayed below (the
 ![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.svg?sanitize=true)
 
 
-Note: Colour output can be globally enabled or disabled by setting the static variable `colorOutput`
-to `ColorOutput.ON` or `ColorOutput.OFF`, respectively.
+Note: Colour output can be globally enabled or disabled by setting
+the static variable `colorOutput`
+to `ColorOutput.ON` or `ColorOutput.OFF`, respectively:
+```Dart
+import 'package:exception_templates/exception_templates.dart';
+
+/// Turning off color output, e.g. if the terminal does not support it.
+void main(List<String> args) {
+  ErrorOfType.colorOutput = ColorOutput.off;
+  ExceptionOfType.colorOutput = ColorOutput.off;
+}
+```
 
 
 ## Utility Functions
 
 The library includes the utility functions `validateIdentifier` and `isValidIdentifier`.
-The function `validateIdentifier` throws an error of type `ErrorOfType<InvalidIdentifier>`
-if the input is a Dart keyword or an insuitable Dart variable or function name.
+The function `validateIdentifier` throws an error of
+type `ErrorOfType<InvalidIdentifier>`
+if the String argument is a Dart keyword or an invalid Dart variable or function name.
 
 ## Examples
 
