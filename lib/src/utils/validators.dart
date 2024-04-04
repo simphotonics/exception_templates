@@ -1,5 +1,3 @@
-/// [String] functions used by source code generators.
-
 import '../errors/error_of_type.dart';
 import '../error_types/invalid_identifier.dart';
 

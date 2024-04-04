@@ -123,7 +123,7 @@ A typical output produced when running the program above is displayed below (the
 
 Note: Colour output can be globally enabled or disabled by setting
 the static variable `colorOutput`
-to `ColorOutput.ON` or `ColorOutput.OFF`, respectively:
+to `ColorOutput.on` or `ColorOutput.off`, respectively:
 ```Dart
 import 'package:exception_templates/exception_templates.dart';
 
@@ -137,8 +137,9 @@ void main(List<String> args) {
 
 ## Utility Functions
 
-The library includes the utility functions `validateIdentifier` and `isValidIdentifier`.
-The function `validateIdentifier` throws an error of
+The library includes the utility functions [`validateIdentifier`][validateIdentifier] and [`isValidIdentifier`][isValidIdentifier].
+
+The function [`validateIdentifier`][validateIdentifier] throws an error of
 type `ErrorOfType<InvalidIdentifier>`
 if the String argument is a Dart keyword or an invalid Dart variable or function name.
 
@@ -168,3 +169,7 @@ Please file feature requests and bugs at the [issue tracker].
 [ErrorOfType<T>]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ErrorOfType-class.html
 
 [exception_templates]: https://pub.dev/packages/exception_templates
+
+[isValidIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/isValidIdentifier.html
+
+[validateIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/validateIdentifier.html
