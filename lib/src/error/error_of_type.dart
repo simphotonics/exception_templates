@@ -1,4 +1,4 @@
-import '../error_types/error_type.dart';
+import 'error_type.dart';
 import '../utils/color_options.dart';
 
 /// Parameterized error template.
@@ -22,10 +22,10 @@ class ErrorOfType<T extends ErrorType> extends Error {
   /// Optional message added when the error is thrown.
   final Object message;
 
-  /// Generic object conveying information about the invalid state.
+  /// Object conveying information about the invalid state.
   final Object invalidState;
 
-  /// Generic object conveying information about an expected state.
+  /// Object conveying information about an expected state.
   final Object expectedState;
 
   /// Set to `ColorOutput.ON` to enable color output to terminal.

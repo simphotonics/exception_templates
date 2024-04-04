@@ -1,6 +1,6 @@
 name: exception_templates
 
-description: Dart exception and error classes with generic type, for
+description: Dart exception and error classes with generic type. Enables
   throwing, catching, and filtering custom exceptions based on their type
   argument.
 

@@ -1,5 +1,5 @@
-import '../errors/error_of_type.dart';
-import '../error_types/invalid_identifier.dart';
+import '../error/error_of_type.dart';
+import '../error/invalid_identifier.dart';
 
 const reservedWords = {
   'abstract',

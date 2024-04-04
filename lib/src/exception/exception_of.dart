@@ -12,10 +12,10 @@ class ExceptionOf<T> implements Exception {
   /// Message added when the error is thrown.
   final Object message;
 
-  /// Generic object conveying information about the invalid state.
+  /// Object conveying information about the invalid state.
   final Object invalidState;
 
-  /// Generic object conveying information about an expected state.
+  /// Object conveying information about an expected state.
   final Object expectedState;
 
   /// Whether to enable color output.

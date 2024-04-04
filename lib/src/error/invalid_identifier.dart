@@ -11,4 +11,4 @@ import 'error_type.dart';
 ///
 /// Typically used with source code generators where users
 /// provide the name of an identifier as `String`.
-abstract class InvalidIdentifier extends ErrorType {}
+final class InvalidIdentifier extends ErrorType {}

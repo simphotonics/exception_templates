@@ -1,4 +1,4 @@
-import '../exception_types/exception_type.dart';
+import 'exception_type.dart';
 import '../utils/color_options.dart';
 
 /// Parameterized exception template.
@@ -23,10 +23,10 @@ class ExceptionOfType<T extends ExceptionType> implements Exception {
   /// Message added when the error is thrown.
   final Object message;
 
-  /// Generic object conveying information about the invalid state.
+  /// Object conveying information about the invalid state.
   final Object invalidState;
 
-  /// Generic object conveying information about an expected state.
+  /// Object conveying information about an expected state.
   final Object expectedState;
 
   /// Whether to enable color output.

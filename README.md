@@ -23,6 +23,7 @@ termination of the program.
 ## Usage
 To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
 
+### Highlighting the Exception Context
 To highlight the **context** in which the exception/error occured use the classes
 [`ExceptionOf<T>`][ExceptionOf<T>] and [`ErrorOf<T>`][ErrorOf<T>].
 Hereby, the type argument indicates that the exception occured within a method of the class `T`.
@@ -73,9 +74,9 @@ void main(List<String> args) async {
     print('Feedback: $userFeedback\n');
   }
 }
-
 ```
 
+### Highlighting the Exception Type
 To emphasise the exception **type** use:
 * [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
 * [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.

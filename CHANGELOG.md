@@ -1,6 +1,7 @@
 ## 0.3.1
 - Applied lints.
 - Updated dev dependencies.
+- Amended README.md.
 
 ## 0.3.0
 - Applied lints, updated message formatter `toColorString`.
