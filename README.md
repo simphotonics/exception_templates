@@ -119,7 +119,7 @@ void main(List<String> args) {
 
 ```
 A typical output produced when running the program above is displayed below (the stack trace is not shown):
-![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.png)
+![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.svg)
 
 
 Note: Colour output can be globally enabled or disabled by setting
