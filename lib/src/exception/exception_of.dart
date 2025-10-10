@@ -26,10 +26,10 @@ class ExceptionOf<T> implements Exception {
 
   @override
   String toString() => toColorString(
-        colorOutput: colorOutput,
-        message: message,
-        expectedState: expectedState,
-        invalidState: invalidState,
-        errorType: runtimeType,
-      );
+    colorOutput: colorOutput,
+    message: message,
+    expectedState: expectedState,
+    invalidState: invalidState,
+    errorType: runtimeType,
+  );
 }

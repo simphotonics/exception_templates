@@ -36,10 +36,10 @@ class ErrorOfType<T extends ErrorType> extends Error {
 
   @override
   String toString() => toColorString(
-        colorOutput: colorOutput,
-        message: message,
-        expectedState: expectedState,
-        invalidState: invalidState,
-        errorType: runtimeType,
-      );
+    colorOutput: colorOutput,
+    message: message,
+    expectedState: expectedState,
+    invalidState: invalidState,
+    errorType: runtimeType,
+  );
 }

@@ -44,6 +44,7 @@ const reservedWords = {
   'mixin',
   'new',
   'null',
+  'of',
   'on',
   'operator',
   'part',
@@ -99,8 +100,9 @@ bool isValidIdentifier(String input) {
 void validateIdentifier(String input) {
   if (!isValidIdentifier(input)) {
     throw ErrorOfType<InvalidIdentifier>(
-        message: 'Unsuitable identifier found.',
-        expectedState: 'Valid Dart identifier.',
-        invalidState: '\'$input\'');
+      message: 'Unsuitable identifier found.',
+      expectedState: 'Valid Dart identifier.',
+      invalidState: '\'$input\'',
+    );
   }
 }

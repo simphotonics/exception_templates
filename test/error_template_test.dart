@@ -22,9 +22,7 @@ extension Constants<T extends num> on Complex<T> {
   }
 
   double angle() {
-    throw ExceptionOf<Complex>(
-      message: 'Method angle not implemented',
-    );
+    throw ExceptionOf<Complex>(message: 'Method angle not implemented');
   }
 }
 
@@ -49,36 +47,45 @@ void main() {
     test('Testing colour output ExceptionOf', () {
       ExceptionOf.colorOutput = ColorOutput.off;
       expect(
-          ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
-          'ExceptionOf',
-          reason: 'Message starts with the exception type '
-              'if colour output is turned off.');
+        ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
+        'ExceptionOf',
+        reason:
+            'Message starts with the exception type '
+            'if colour output is turned off.',
+      );
       ExceptionOf.colorOutput = ColorOutput.on;
       expect(
-        ExceptionOf<Complex>()
-            .toString()
-            .substring(0, AnsiColor.red.code.length),
+        ExceptionOf<Complex>().toString().substring(
+          0,
+          AnsiColor.red.code.length,
+        ),
         AnsiColor.red.code,
-        reason: 'Message start with the colour code '
+        reason:
+            'Message start with the colour code '
             'if colour output is turned on',
       );
     });
     test('Testing colour output ExceptionOfType', () {
       ExceptionOfType.colorOutput = ColorOutput.off;
       expect(
-          ExceptionOfType<InvalidDataFound>()
-              .toString()
-              .substring(0, 'ExceptionOfType'.length),
-          'ExceptionOfType',
-          reason: 'Message starts with the exception type '
-              'if colour output is turned off.');
+        ExceptionOfType<InvalidDataFound>().toString().substring(
+          0,
+          'ExceptionOfType'.length,
+        ),
+        'ExceptionOfType',
+        reason:
+            'Message starts with the exception type '
+            'if colour output is turned off.',
+      );
       ExceptionOfType.colorOutput = ColorOutput.on;
       expect(
-        ExceptionOfType<InvalidDataFound>()
-            .toString()
-            .substring(0, AnsiColor.red.code.length),
+        ExceptionOfType<InvalidDataFound>().toString().substring(
+          0,
+          AnsiColor.red.code.length,
+        ),
         AnsiColor.red.code,
-        reason: 'Message start with the colour code '
+        reason:
+            'Message start with the colour code '
             'if colour output is turned on',
       );
     });
@@ -123,7 +130,8 @@ void main() {
     test('<FailedToSerializeObject>', () {
       try {
         throw ErrorOfType<FailedToSerializeObject>(
-            message: 'Serialization failed.');
+          message: 'Serialization failed.',
+        );
       } on ErrorOfType catch (e) {
         expect(e.typeArgument, FailedToSerializeObject);
         expect(e.message, 'Serialization failed.');

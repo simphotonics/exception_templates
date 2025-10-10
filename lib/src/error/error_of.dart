@@ -4,11 +4,7 @@ import '../utils/color_options.dart';
 ///
 /// The generic type `T` indicates in which context the error occured.
 class ErrorOf<T> extends Error {
-  ErrorOf({
-    this.message = '',
-    this.invalidState = '',
-    this.expectedState = '',
-  });
+  ErrorOf({this.message = '', this.invalidState = '', this.expectedState = ''});
 
   /// Message added when the error is thrown.
   final Object message;
@@ -27,10 +23,10 @@ class ErrorOf<T> extends Error {
 
   @override
   String toString() => toColorString(
-        colorOutput: colorOutput,
-        message: message,
-        expectedState: expectedState,
-        invalidState: invalidState,
-        errorType: runtimeType,
-      );
+    colorOutput: colorOutput,
+    message: message,
+    expectedState: expectedState,
+    invalidState: invalidState,
+    errorType: runtimeType,
+  );
 }

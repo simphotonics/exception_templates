@@ -16,12 +16,13 @@ enum AnsiColor {
 }
 
 /// Transforms error/exception messages to a colorized output string.
-String toColorString(
-    {Object message = '',
-    Object expectedState = '',
-    Object invalidState = '',
-    ColorOutput colorOutput = ColorOutput.on,
-    required Type errorType}) {
+String toColorString({
+  Object message = '',
+  Object expectedState = '',
+  Object invalidState = '',
+  ColorOutput colorOutput = ColorOutput.on,
+  required Type errorType,
+}) {
   final red = (colorOutput == ColorOutput.on) ? AnsiColor.red.code : '';
   final reset = (colorOutput == ColorOutput.on) ? AnsiColor.reset.code : '';
   final green = (colorOutput == ColorOutput.on) ? AnsiColor.green.code : '';
@@ -29,15 +30,15 @@ String toColorString(
 
   final msg = message.toString().isEmpty
       ? ''
-      : '${Error.safeToString(message)}$reset\n';
+      : '$red message: $reset ${Error.safeToString(message)}$reset\n';
 
   final expected = expectedState.toString().isEmpty
       ? ''
-      : ' $green Expected state: $reset${Error.safeToString(expectedState)}\n';
+      : ' $green expected state: $reset${Error.safeToString(expectedState)}\n';
 
   final invalid = invalidState.toString().isEmpty
       ? ''
-      : ' $yellow Invalid state: $reset${Error.safeToString(invalidState)}\n';
+      : ' $yellow invalid state: $reset${Error.safeToString(invalidState)}\n';
 
-  return '$red$errorType: $msg$invalid$expected\n';
+  return '$red$errorType$reset(\n $msg$invalid$expected)';
 }

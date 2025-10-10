@@ -55,4 +55,4 @@ echo
 
 dart example/bin/exception_example.dart
 
-echo -e "${GREEN}---      Script has exited sucessfully.     ---"
+echo -e "${GREEN}---      Script has exited sucessfully.  ...${RESET}"
