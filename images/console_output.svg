@@ -5,37 +5,10 @@
    height="231px"
    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
    id="svg1394"
-   sodipodi:docname="console_output.svg"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1398" />
-  <sodipodi:namedview
-     id="namedview1396"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="true"
-     inkscape:zoom="3.895238"
-     inkscape:cx="392.65893"
-     inkscape:cy="126.05135"
-     inkscape:window-width="3828"
-     inkscape:window-height="2061"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1394">
-    <inkscape:grid
-       type="xygrid"
-       id="grid156" />
-  </sodipodi:namedview>
   <g
      id="g4"
      transform="translate(0.5,0.5)">
@@ -51,7 +24,6 @@
      x="39.877045"
      y="38.611233"
      id="text1735"><tspan
-       sodipodi:role="line"
        id="tspan1733"
        x="39.877045"
        y="38.611233">$ dart example/bin error example.dart</tspan></text>
@@ -61,7 +33,6 @@
      x="39.599712"
      y="62.612194"
      id="text2445"><tspan
-       sodipodi:role="line"
        id="tspan2443"
        x="39.599712"
        y="62.612194">b - a = [2, 2]</tspan></text>
@@ -71,7 +42,6 @@
      x="40.050381"
      y="86.613152"
      id="text2449"><tspan
-       sodipodi:role="line"
        id="tspan2447"
        x="40.050381"
        y="86.613152">Unhandled exception:</tspan></text>
@@ -81,7 +51,6 @@
      x="39.305798"
      y="110.61411"
      id="text2453"><tspan
-       sodipodi:role="line"
        id="tspan2451"
        x="39.305798"
        y="110.61411">ErrorOfType&lt;LenghtMismatch&gt;</tspan></text>
@@ -91,7 +60,6 @@
      x="60.036938"
      y="134.61507"
      id="text3544"><tspan
-       sodipodi:role="line"
        id="tspan3542"
        x="60.036938"
        y="134.61507">message:</tspan></text>
@@ -101,7 +69,6 @@
      x="143.27722"
      y="134.61507"
      id="text3598"><tspan
-       sodipodi:role="line"
        id="tspan3596"
        x="143.27722"
        y="134.61507">&quot;Could not calculate: [3, 4, 5] - [3, 4].&quot;</tspan></text>
@@ -111,7 +78,6 @@
      x="203.05437"
      y="158.61603"
      id="text3602"><tspan
-       sodipodi:role="line"
        id="tspan3600"
        x="203.05437"
        y="158.61603">&quot;Length of [3, 4, 5] does not match length of [3, 4.]&quot;</tspan></text>
@@ -121,7 +87,6 @@
      x="210.64873"
      y="182.61699"
      id="text3606"><tspan
-       sodipodi:role="line"
        id="tspan3604"
        x="210.64873"
        y="182.61699">&quot;Two operands with the same length.&quot;</tspan></text>
@@ -131,7 +96,6 @@
      x="60.071606"
      y="182.61699"
      id="text3610"><tspan
-       sodipodi:role="line"
        id="tspan3608"
        x="60.071606"
        y="182.61699">expected state:</tspan></text>
@@ -141,7 +105,6 @@
      x="59.759605"
      y="158.61603"
      id="text3614"><tspan
-       sodipodi:role="line"
        id="tspan3612"
        x="59.759605"
        y="158.61603">invalid state:</tspan></text>
@@ -151,7 +114,6 @@
      x="304.01291"
      y="110.61411"
      id="text3618"><tspan
-       sodipodi:role="line"
        id="tspan3616"
        x="304.01291"
        y="110.61411">(</tspan></text>
@@ -161,7 +123,6 @@
      x="38.681049"
      y="206.61795"
      id="text3724"><tspan
-       sodipodi:role="line"
        id="tspan3722"
        x="38.681049"
        y="206.61795">)</tspan></text>
@@ -171,7 +132,6 @@
      x="329.77408"
      y="165.15558"
      id="text3728"><tspan
-       sodipodi:role="line"
        id="tspan3726"
        x="329.77408"
        y="165.15558" /></text>
