@@ -1,3 +1,4 @@
+/// Enables/disables terminal colour output. 
 enum ColorOutput { on, off }
 
 /// Represents and Ansi colour.
