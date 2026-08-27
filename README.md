@@ -5,31 +5,38 @@
 
 ## Introduction
 
-While it is possible to throw any object in Dart, production code typically contains
-custom error and exception classes that
+In addition to the error and exception classes provided by the Dart SDK,
+production code may contain custom error and exception classes that
 extend [`Error`][Error] and implement [`Exception`][Exception].
 
 An alternative approach consists in using exceptions with parameterized type.
 The library [`exception_templates`][exception_templates] provides
-parameterized classes that allow throwing errors/exceptions and filtering caught exceptions characterized
+parameterized classes that allow throwing errors/exceptions and filtering
+caught exceptions characterized
 by their **type argument**.
 
 In the following sections the term *exception* stands for exception/error
-with the understanding that in general exceptions should be handled while errors should lead to the
+with the understanding that exceptions
+should be handled while errors should lead to the
 termination of the program.
 
 
-
 ## Usage
-To use this library include [exception_templates] as dependency in your `pubspec.yaml` file.
+To use this library,
+include [exception_templates] as dependency in your `pubspec.yaml` file.
 
 ### Highlighting the Exception Context
-To highlight the **context** in which the exception/error occured use the classes
+To highlight the **context** in which the exception/error occured use
+the classes
 [`ExceptionOf<T>`][ExceptionOf<T>] and [`ErrorOf<T>`][ErrorOf<T>].
-Hereby, the type argument indicates that the exception occured within a method of the class `T`.
-In this case, there is no need to define class specific exceptions. See example below.
+Hereby, the type argument indicates that
+the exception occured within a method of the class `T`.
+In this case, there is no need to define
+class specific exceptions. See example below.
 
 ```Dart
+
+
 // To run this program navigate to the root of your local copy of the
 // package exception_templates and use
 //
@@ -46,18 +53,20 @@ Future<T> later<T>(T t) async {
 
 /// Sample class
 class UserForm {
-  const UserForm(this.userName);
+  const new({required this.userName, required this.dateOfBirth});
 
   final String userName;
+  final DateTime dateOfBirth;
+  int get age => DateTime.now().year - dateOfBirth.year;
 
-  /// Simulates fetching user feedback from a database or network connection.
+  /// Simulates fetching user feedback.
   Future<String> fetchFeedback() async {
-    final feedback = await later('');
-    if (feedback.isEmpty) {
+    final feedback = await later('We had a good time dining at the ...');
+    if (age < 18) {
       throw ExceptionOf<UserForm>(
         message: 'Could not process $userName\'s feedback.',
-        invalidState: 'String found: $feedback',
-        expectedState: 'A non-empty String.',
+        invalidState: 'The user is a minor with age: $age.',
+        expectedState: 'Only adults are allowed to leave feedback.',
       );
     }
     return feedback;
@@ -65,7 +74,10 @@ class UserForm {
 }
 
 void main(List<String> args) async {
-  final userForm = UserForm('Daniel');
+  final userForm = UserForm(
+    userName: 'Daniel',
+    dateOfBirth: DateTime(2018, 5, 25),
+  );
   try {
     final userFeedback = await userForm.fetchFeedback();
     print(userFeedback);
@@ -138,11 +150,14 @@ void main(List<String> args) {
 
 ## Utility Functions
 
-The library includes the utility functions [`validateIdentifier`][validateIdentifier] and [`isValidIdentifier`][isValidIdentifier].
+The library includes the utility functions
+[`validateIdentifier`][validateIdentifier] and
+[`isValidIdentifier`][isValidIdentifier].
 
 The function [`validateIdentifier`][validateIdentifier] throws an error of
 type `ErrorOfType<InvalidIdentifier>`
-if the String argument is a Dart keyword or an invalid Dart variable or function name.
+if the String argument is a Dart keyword or
+an invalid Dart variable or function name.
 
 ## Examples
 
