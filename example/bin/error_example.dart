@@ -7,7 +7,7 @@
 import 'package:exception_templates/exception_templates.dart';
 
 // Defining error types:
-class LengthMismatch extends ErrorType {}
+class LengthMismatch extends ErrorType;
 
 extension Subtraction on List<num> {
   /// Subtracts two numerical lists of same length.
