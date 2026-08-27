@@ -1,4 +1,4 @@
-/// Enables/disables terminal colour output. 
+/// Enables/disables terminal colour output.
 enum ColorOutput { on, off }
 
 /// Represents and Ansi colour.
@@ -11,7 +11,7 @@ enum AnsiColor(
   blue('\u001B[34m'),
   cyan('\u001B[36m'),
   yellow('\u001B[33m'),
-  reset('\u001B[0m');
+  reset('\u001B[0m'),
 }
 
 /// Transforms error/exception messages to a colorized output string.
