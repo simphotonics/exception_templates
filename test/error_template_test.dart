@@ -5,12 +5,12 @@ import 'package:test/test.dart';
 import 'package:exception_templates/exception_templates.dart';
 
 // Defining error/exception types:
-class FailedToSerializeObject extends ErrorType {}
+class FailedToSerializeObject extends ErrorType;
 
-class InvalidDataFound extends ExceptionType {}
+class InvalidDataFound extends ExceptionType;
 
 class Complex<T extends num> {
-  Complex(this.real, this.imag);
+  new(this.real, this.imag);
   T real;
   T imag;
 }

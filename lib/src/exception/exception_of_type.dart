@@ -13,25 +13,16 @@ import '../utils/color_options.dart';
 /// // Throwing an exception of the newly defined type.
 /// throw ExceptionOfType<DatabaseNotInitialized>;
 /// ```
-class ExceptionOfType<T extends ExceptionType> implements Exception {
-  ExceptionOfType({
-    this.message = '',
-    this.invalidState = '',
-    this.expectedState = '',
-  });
-
+class ExceptionOfType<T extends ExceptionType>({
   /// Message added when the error is thrown.
-  final Object message;
+  final Object message = '',
 
   /// Object conveying information about the invalid state.
-  final Object invalidState;
+  final Object invalidState = '',
 
   /// Object conveying information about an expected state.
-  final Object expectedState;
-
-  /// Whether to enable color output.
-  static ColorOutput colorOutput = ColorOutput.on;
-
+  final Object expectedState = '',
+}) implements Exception {
   /// Type argument of the exception class.
   Type get typeArgument => T;
 
@@ -43,4 +34,7 @@ class ExceptionOfType<T extends ExceptionType> implements Exception {
     invalidState: invalidState,
     errorType: runtimeType,
   );
+
+  /// Whether to enable color output.
+  static ColorOutput colorOutput = ColorOutput.on;
 }

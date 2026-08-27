@@ -3,7 +3,8 @@
 [![Dart](https://github.com/simphotonics/exception_templates/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/exception_templates/actions/workflows/dart.yml)
 
 
-The programs in the folder [example][example] demonstrate the use of errors and exceptions with generic type.
+The programs in the folder [example][example] demonstrate the
+use of errors and exceptions with generic type.
 
 
 ## Features and bugs

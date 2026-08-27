@@ -12,12 +12,8 @@ import '../utils/color_options.dart';
 /// // Throwing an error of type [ErrorType].
 /// throw ErrorOfType<SerializationFailed>;
 /// ```
-class ErrorOfType<T extends ErrorType> extends Error {
-  ErrorOfType({
-    this.message = '',
-    this.invalidState = '',
-    this.expectedState = '',
-  });
+class ErrorOfTypeOld<T extends ErrorType> extends Error {
+  new({this.message = '', this.invalidState = '', this.expectedState = ''});
 
   /// Optional message added when the error is thrown.
   final Object message;
@@ -42,4 +38,42 @@ class ErrorOfType<T extends ErrorType> extends Error {
     invalidState: invalidState,
     errorType: runtimeType,
   );
+}
+
+/// Parameterized error template.
+///
+/// The generic type `T` indicates what **type** of error occured.
+///
+/// Usage:
+/// ```Dart
+/// // Creating a new [ErrorType].
+/// class SerializationFailed extends ErrorType{}
+///
+/// // Throwing an error of type [ErrorType].
+/// throw ErrorOfType<SerializationFailed>;
+/// ```
+class ErrorOfType<T extends ErrorType>({
+  /// Optional message added when the error is thrown.
+  final Object message = '',
+
+  /// Object conveying information about the invalid state.
+  final Object invalidState = '',
+
+  /// Object conveying information about an expected state.
+  final Object expectedState = '',
+}) extends Error {
+  /// Type argument of the error class.
+  Type get typeArgument => T;
+
+  @override
+  String toString() => toColorString(
+    colorOutput: colorOutput,
+    message: message,
+    expectedState: expectedState,
+    invalidState: invalidState,
+    errorType: runtimeType,
+  );
+
+  /// Set to `ColorOutput.ON` to enable color output to terminal.
+  static ColorOutput colorOutput = ColorOutput.on;
 }

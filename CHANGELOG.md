@@ -1,3 +1,13 @@
+## 1.0.0
+- Converted classes to use primary constructor syntax.
+- Improved examples.
+- Updated docs. 
+
+## 0.3.2
+- Updated dependencies.
+- Updated colorized toString() function.
+- Updated list of Dart keywords.
+
 ## 0.3.1
 - Applied lints.
 - Updated dev dependencies.

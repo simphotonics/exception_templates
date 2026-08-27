@@ -1,18 +1,16 @@
 enum ColorOutput { on, off }
 
 /// Represents and Ansi colour.
-enum AnsiColor {
+enum AnsiColor(
+  /// The String code representing the colour.
+  final String code,
+) {
   red('\u001B[31m'),
   green('\u001B[32m'),
   blue('\u001B[34m'),
   cyan('\u001B[36m'),
   yellow('\u001B[33m'),
   reset('\u001B[0m');
-
-  const AnsiColor(this.code);
-
-  /// The String code representing the colour.
-  final String code;
 }
 
 /// Transforms error/exception messages to a colorized output string.
