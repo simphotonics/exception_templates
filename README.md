@@ -5,18 +5,21 @@
 
 ## Introduction
 
-Dart includes the classes [`Error`][Error] and
-[`Exception`][Exception] with the understanding that
-thrown exceptions should be handled while errors should lead to the
+While Dart allows programmers to throw any object, errors typically extend
+[`Error`][Error] while exceptions implement [`Exception`][Exception].
+The convention is that exceptions should be caught and handled
+while errors should lead to the
 termination of the program.
 
 The library [`exception_templates`][exception_templates] provides
-generic classes that extend [`Error`][Error] and
-generic classes that implement [`Exception`][Exception].
+the *generic* classes:
+* [`ExceptionOf<T>`][ExceptionOf<T>] and[`ErrorOf<T>`][ErrorOf<T>],
+* [`ExceptionOfType<T extends ExceptionType>`][ExceptionOfType<T>]
+and [`ErrorOfType<T extends ErrorType>`][ErrorOfType<T>].
 
-These classes support colourized console output and
+These classes provide support for colourized console output and
 allow throwing *custom* errors and exceptions
-that are characterized by their **type argument**.
+that can be distinguished by their **type argument**.
 
 ## Usage
 To use this library,
