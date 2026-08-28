@@ -23,7 +23,7 @@ that can be distinguished by their **type argument**.
 
 ## Usage
 To use this library,
-include [exception_templates] as dependency in your `pubspec.yaml` file.
+include [exception_templates] as a dependency in your `pubspec.yaml` file.
 
 ### 1. Highlighting the Exception Context
 To highlight the **context** in which the exception/error occured use
