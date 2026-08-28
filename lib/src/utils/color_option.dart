@@ -2,7 +2,7 @@
 enum ColorOutput { on, off }
 
 /// Represents and Ansi colour.
-enum AnsiColor(
+enum Ansi(
   /// The String code representing the colour.
   final String code,
 ) {
@@ -22,14 +22,14 @@ String toColorString({
   ColorOutput colorOutput = ColorOutput.on,
   required Type errorType,
 }) {
-  final red = (colorOutput == ColorOutput.on) ? AnsiColor.red.code : '';
-  final reset = (colorOutput == ColorOutput.on) ? AnsiColor.reset.code : '';
-  final green = (colorOutput == ColorOutput.on) ? AnsiColor.green.code : '';
-  final yellow = (colorOutput == ColorOutput.on) ? AnsiColor.yellow.code : '';
+  final green = (colorOutput == ColorOutput.on) ? Ansi.green.code : '';
+  final red = (colorOutput == ColorOutput.on) ? Ansi.red.code : '';
+  final reset = (colorOutput == ColorOutput.on) ? Ansi.reset.code : '';
+  final yellow = (colorOutput == ColorOutput.on) ? Ansi.yellow.code : '';
 
   final msg = message.toString().isEmpty
       ? ''
-      : '$red message: $reset ${Error.safeToString(message)}$reset\n';
+      : '$red message: $reset ${Error.safeToString(message)}\n';
 
   final expected = expectedState.toString().isEmpty
       ? ''

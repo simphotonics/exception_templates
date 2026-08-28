@@ -1,5 +1,5 @@
 import 'exception_type.dart';
-import '../utils/color_options.dart';
+import '../utils/color_option.dart';
 
 /// Parameterized exception template.
 /// The generic type `T` indicates what **type** of error occured.

@@ -1,4 +1,4 @@
-import '../utils/color_options.dart';
+import '../utils/color_option.dart';
 
 /// Parameterized exception class.
 /// The type argument indicates in which context the exception occured.

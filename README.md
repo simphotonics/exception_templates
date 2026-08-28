@@ -36,9 +36,9 @@ class specific exceptions.
 
 ```Dart
 // To run this program navigate to the root of your local copy of the
-// package exception_templates and use
+// package exception_templates and type
 //
-// # dart example/bin/exception_example.dart
+// $ dart example/bin/exception_example.dart
 //
 // followed by enter.
 import 'package:exception_templates/exception_templates.dart';
@@ -50,11 +50,10 @@ Future<T> later<T>(T t) async {
 }
 
 /// Sample class
-class UserForm {
-  const new({required this.userName, required this.dateOfBirth});
-
-  final String userName;
-  final DateTime dateOfBirth;
+class const UserForm({
+  required final String userName,
+  required final DateTime dateOfBirth,
+}) {
   int get age => DateTime.now().year - dateOfBirth.year;
 
   /// Simulates fetching user feedback.
@@ -89,8 +88,8 @@ void main(List<String> args) async {
 ### 2. Highlighting the Exception Type
 
 To emphasise the exception **type** use:
-* [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
-* [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
+* [`ExceptionOfType<T extends ExceptionType>`][ExceptionOfType<T>],
+* [`ErrorOfType<T extends ErrorType>`][ErrorOfType<T>].
 
 The program below demonstrates how
 to throw an error of type `ErrorOfType<LengthMismatch>`.
@@ -105,7 +104,7 @@ to throw an error of type `ErrorOfType<LengthMismatch>`.
 import 'package:exception_templates/exception_templates.dart';
 
 // Defining error types:
-class LengthMismatch extends ErrorType {}
+class LengthMismatch extends ErrorType;
 
 extension Subtraction on List<num> {
   /// Subtracts two numerical lists of same length.

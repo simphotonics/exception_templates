@@ -13,11 +13,10 @@ Future<T> later<T>(T t) async {
 }
 
 /// Sample class
-class UserForm {
-  const new({required this.userName, required this.dateOfBirth});
-
-  final String userName;
-  final DateTime dateOfBirth;
+class const UserForm({
+  required final String userName,
+  required final DateTime dateOfBirth,
+}) {
   int get age => DateTime.now().year - dateOfBirth.year;
 
   /// Simulates fetching user feedback.

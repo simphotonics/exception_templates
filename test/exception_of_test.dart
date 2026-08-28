@@ -50,11 +50,8 @@ void main() {
       );
       ExceptionOf.colorOutput = ColorOutput.on;
       expect(
-        ExceptionOf<Complex>().toString().substring(
-          0,
-          AnsiColor.red.code.length,
-        ),
-        AnsiColor.red.code,
+        ExceptionOf<Complex>().toString().substring(0, Ansi.red.code.length),
+        Ansi.red.code,
         reason:
             'Message start with the colour code '
             'if colour output is turned on',

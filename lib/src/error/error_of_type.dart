@@ -1,5 +1,5 @@
 import 'error_type.dart';
-import '../utils/color_options.dart';
+import '../utils/color_option.dart';
 
 /// Parameterized error template.
 ///
