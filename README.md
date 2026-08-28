@@ -5,21 +5,18 @@
 
 ## Introduction
 
-In addition to the error and exception classes provided by the Dart SDK,
-production code may contain custom error and exception classes that
-extend [`Error`][Error] and implement [`Exception`][Exception].
-
-An alternative approach consists in using exceptions with parameterized type.
-The library [`exception_templates`][exception_templates] provides
-parameterized classes that allow throwing errors/exceptions and filtering
-caught exceptions characterized
-by their **type argument**.
-
-In the following sections the term *exception* stands for exception/error
-with the understanding that exceptions
-should be handled while errors should lead to the
+Dart includes the classes [`Error`][Error] and
+[`Exception`][Exception] with the understanding that
+thrown exceptions should be handled while errors should lead to the
 termination of the program.
 
+The library [`exception_templates`][exception_templates] provides
+generic classes that extend [`Error`][Error] and
+generic classes that implement [`Exception`][Exception].
+
+These classes support colourized console output and
+allow throwing *custom* errors and exceptions
+that are characterized by their **type argument**.
 
 ## Usage
 To use this library,
@@ -29,14 +26,12 @@ include [exception_templates] as dependency in your `pubspec.yaml` file.
 To highlight the **context** in which the exception/error occured use
 the classes
 [`ExceptionOf<T>`][ExceptionOf<T>] and [`ErrorOf<T>`][ErrorOf<T>].
-Hereby, the type argument indicates that
+The type argument indicates that
 the exception occured within a method of the class `T`.
 In this case, there is no need to define
-class specific exceptions. See example below.
+class specific exceptions.
 
 ```Dart
-
-
 // To run this program navigate to the root of your local copy of the
 // package exception_templates and use
 //
@@ -89,6 +84,7 @@ void main(List<String> args) async {
 ```
 
 ### 2. Highlighting the Exception Type
+
 To emphasise the exception **type** use:
 * [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
 * [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
@@ -130,7 +126,8 @@ void main(List<String> args) {
 }
 
 ```
-A typical output produced when running the program above is displayed below (the stack trace is not shown):
+A typical output produced when running the program above is displayed
+below (the stack trace is not shown):
 ![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.png)
 
 
@@ -146,7 +143,7 @@ void main(List<String> args) {
   ExceptionOfType.colorOutput = ColorOutput.off;
 }
 ```
- 
+
 
 ## Utility Functions
 
