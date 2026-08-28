@@ -18,7 +18,7 @@ and [`ErrorOfType<T extends ErrorType>`][ErrorOfType<T>].
 
 These classes provide support for colourized console output and
 allow throwing *custom* errors and exceptions
-that can be distinguished by their **type argument**.
+that can be distinguished by their *type argument*.
 
 ## Usage
 To use this library,
