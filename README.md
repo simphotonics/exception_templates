@@ -25,7 +25,7 @@ termination of the program.
 To use this library,
 include [exception_templates] as dependency in your `pubspec.yaml` file.
 
-### Highlighting the Exception Context
+### 1. Highlighting the Exception Context
 To highlight the **context** in which the exception/error occured use
 the classes
 [`ExceptionOf<T>`][ExceptionOf<T>] and [`ErrorOf<T>`][ErrorOf<T>].
@@ -88,7 +88,7 @@ void main(List<String> args) async {
 }
 ```
 
-### Highlighting the Exception Type
+### 2. Highlighting the Exception Type
 To emphasise the exception **type** use:
 * [`ExceptionOfType<T>`][ExceptionOfType<T>], where `T extends ExceptionType`,
 * [`ErrorOfType<T>`][ErrorOfType<T>] where `T extends ErrorType`.
@@ -146,7 +146,7 @@ void main(List<String> args) {
   ExceptionOfType.colorOutput = ColorOutput.off;
 }
 ```
-
+ 
 
 ## Utility Functions
 

@@ -1,7 +1,8 @@
 ## 1.0.0
 - Converted classes to use primary constructor syntax.
 - Improved examples.
-- Updated docs. 
+- Updated docs.
+- Requires Dart ^3.13.0.
 
 ## 0.3.2
 - Updated dependencies.
