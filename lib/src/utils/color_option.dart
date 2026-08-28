@@ -1,7 +1,7 @@
 /// Enables/disables terminal colour output.
 enum ColorOutput { on, off }
 
-/// Represents and Ansi colour.
+/// Represents an Ansi escape code.
 enum Ansi(
   /// The String code representing the colour.
   final String code,

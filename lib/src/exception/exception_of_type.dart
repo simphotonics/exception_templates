@@ -1,10 +1,10 @@
 import 'exception_type.dart';
 import '../utils/color_option.dart';
 
-/// Parameterized exception template.
-/// The generic type `T` indicates what **type** of error occured.
-/// Usage:
+/// Parameterized exception class.
+/// The generic type [T] indicates what *type* of error occured.
 /// ```Dart
+/// // Usage:
 /// import 'package:exception_templates/exception_templates.dart';
 ///
 /// // Defining an exception type.
