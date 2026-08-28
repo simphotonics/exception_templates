@@ -11,8 +11,7 @@ The convention is that exceptions should be caught and handled
 while errors should lead to the
 termination of the program.
 
-The library [`exception_templates`][exception_templates] provides
-the *generic* classes:
+This library includes the *generic* classes:
 * [`ExceptionOf<T>`][ExceptionOf<T>] and[`ErrorOf<T>`][ErrorOf<T>],
 * [`ExceptionOfType<T extends ExceptionType>`][ExceptionOfType<T>]
 and [`ErrorOfType<T extends ErrorType>`][ErrorOfType<T>].
