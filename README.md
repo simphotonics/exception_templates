@@ -132,9 +132,8 @@ below (the stack trace is not shown):
 ![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.svg)
 
 
-Note: Colour output can be globally enabled or disabled by setting
-the static variable `Ansi.status` to
-to `ColorOutput.enabled` or `ColorOutput.disabled`, respectively:
+Note: Colour output can be globally enabled/disabled by setting
+the static variable `Ansi.status`:
 ```Dart
 import 'package:ansi_modifier/ansi_modifier.dart';
 import 'package:exception_templates/exception_templates.dart';
@@ -145,6 +144,8 @@ void main() {
 
 }
 ```
+The font color and style can be adjusted by setting the static variables
+provided by the class [`ColorProfile][ColorProfile].
 
 ## Utility Functions
 
@@ -171,6 +172,8 @@ Please file feature requests and bugs at the [issue tracker].
 
 [example]: example
 
+[ColorProfile]: https://pub.dev/documentation/exception_templates/latest/exception_templates/ColorProfile-class.html
+
 [Error]: https://api.dart.dev/stable/dart-core/Error-class.html
 
 [Exception]: https://api.dart.dev/stable/dart-core/Exception-class.html
@@ -185,6 +188,6 @@ Please file feature requests and bugs at the [issue tracker].
 
 [exception_templates]: https://pub.dev/packages/exception_templates
 
-[isValidIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/isValidIdentifier.html
+[isValidIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/IdentifierValidator/isValidIdentifier.html
 
-[validateIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/validateIdentifier.html
+[validateIdentifier]: https://pub.dev/documentation/exception_templates/latest/exception_templates/IdentifierValidator/validateIdentifier.html

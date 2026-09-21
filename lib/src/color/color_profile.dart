@@ -1,6 +1,7 @@
 import 'package:ansi_modifier/ansi_modifier.dart';
 
-/// Defines styles and colors used to print benchmark reports to a terminal.
+/// Defines the font style and color used to generated colorized console
+/// output.
 abstract class ColorProfile {
   /// Style of an error message part showing an error or exception.
   static FontModifier error = Ansi.redBright;

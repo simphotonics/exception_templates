@@ -1,3 +1,9 @@
+## 1.1.0
+- Identifier validators are now extension methods.
+- The colors and font style used to generate console output can now be
+  customized by setting the static variables of the class `ColorProfile`.
+- Updated dependencies. 
+
 ## 1.0.0
 - Converted classes to use primary constructor syntax.
 - Improved examples.

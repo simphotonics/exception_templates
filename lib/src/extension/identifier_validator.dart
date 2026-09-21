@@ -99,7 +99,7 @@ extension IdentifierValidator on String {
   }
 
   /// Throws an [ErrorOfType] with type argument [InvalidIdentifier]
-  /// if [input] is not a
+  /// `this` is not a
   /// valid Dart identifier.
   void validateIdentifier() {
     if (!isValidIdentifier) {
