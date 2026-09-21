@@ -15,7 +15,7 @@ enum Ansi(
 }
 
 /// Transforms error/exception messages to a colorized output string.
-String toColorString({
+String toColorString1({
   Object message = '',
   Object expectedState = '',
   Object invalidState = '',

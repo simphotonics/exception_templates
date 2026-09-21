@@ -1,3 +1,5 @@
+import 'package:exception_templates/src/mixin/color_string.dart';
+
 import 'error_type.dart';
 import '../utils/color_option.dart';
 
@@ -20,17 +22,15 @@ class ErrorOfType<T extends ErrorType>({
 
   /// Object conveying information about an expected state.
   final Object expectedState = '',
-}) extends Error {
+}) extends Error with ColorString {
   /// The type argument of the error class.
   Type get typeArgument => T;
 
   @override
   String toString() => toColorString(
-    colorOutput: colorOutput,
     message: message,
     expectedState: expectedState,
     invalidState: invalidState,
-    errorType: runtimeType,
   );
 
   /// Set to `ColorOutput.ON` to enable color output to terminal.

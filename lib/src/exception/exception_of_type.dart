@@ -1,3 +1,4 @@
+import '../mixin/color_string.dart';
 import 'exception_type.dart';
 import '../utils/color_option.dart';
 
@@ -22,17 +23,15 @@ class ExceptionOfType<T extends ExceptionType>({
 
   /// Object conveying information about an expected state.
   final Object expectedState = '',
-}) implements Exception {
+}) with ColorString implements Exception {
   /// Type argument of the exception class.
   Type get typeArgument => T;
 
   @override
   String toString() => toColorString(
-    colorOutput: colorOutput,
     message: message,
     expectedState: expectedState,
     invalidState: invalidState,
-    errorType: runtimeType,
   );
 
   /// Whether to enable color output.

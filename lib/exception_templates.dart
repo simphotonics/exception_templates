@@ -5,5 +5,5 @@ export 'src/error/invalid_identifier.dart';
 export 'src/exception/exception_of.dart';
 export 'src/exception/exception_of_type.dart';
 export 'src/exception/exception_type.dart';
+export 'src/extension/identifier_validator.dart';
 export 'src/utils/color_option.dart';
-export 'src/utils/validator.dart';

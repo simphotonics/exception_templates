@@ -1,4 +1,6 @@
+import 'package:ansi_modifier/ansi_modifier.dart';
 import 'package:exception_templates/exception_templates.dart';
+import 'package:exception_templates/src/utils/color_profile.dart';
 import 'package:test/test.dart';
 
 class A;
@@ -12,8 +14,8 @@ void main() {
 
     test('color on', () {
       expect(
-        toColorString(errorType: errorType),
-        '${Ansi.red.code}$errorType${Ansi.reset.code}(\n )',
+        ErrorOf<A>(),
+        '$errorType'.style(ColorProfile.error),
       );
       expect(
         toColorString(

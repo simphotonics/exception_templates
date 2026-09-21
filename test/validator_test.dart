@@ -4,14 +4,14 @@ import 'package:test/test.dart';
 void main() {
   group('identifier:', () {
     test('isValid', () {
-      expect(isValidIdentifier('async'), isFalse);
-      expect(isValidIdentifier('input'), isTrue);
-      expect(isValidIdentifier('OUT*'), isFalse);
-      expect(isValidIdentifier('_\$i'), isTrue);
+      expect('async'.isValidIdentifier, isFalse);
+      expect('input'.isValidIdentifier, isTrue);
+      expect('OUT*'.isValidIdentifier, isFalse);
+      expect('_\$i'.isValidIdentifier, isTrue);
     });
     test('async', () {
       expect(
-        reservedWords,
+        IdentifierValidator.reservedWords,
         isA<Set<String>>().having(
           (set) => set.contains('async'),
           'contains(async)',
@@ -20,8 +20,9 @@ void main() {
       );
     });
     test('className->libraryName', () {
-      expect(classNameToLibraryName('StandardUserForm'), 'standard_user_form');
-      expect(classNameToLibraryName('STANDARDUserForm'), 'standarduser_form');
+      expect('StandardUserForm'.toLibraryName, 'standard_user_form');
+      expect('STANDARDUserForm'.toLibraryName, 'standarduser_form');
+      expect('standardUserForm'.toLibraryName, 'standard_user_form');
     });
   });
 }
