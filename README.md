@@ -145,7 +145,7 @@ void main() {
 }
 ```
 The font color and style can be adjusted by setting the static variables
-provided by the class [`ColorProfile][ColorProfile].
+provided by the class [`ColorProfile`][ColorProfile].
 
 ## Utility Functions
 
