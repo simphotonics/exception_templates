@@ -24,16 +24,6 @@ extension Subtraction on List<num> {
 }
 
 void main() {
-  print(
-    ErrorOfType<LengthMismatch>(
-      message: 'Could not calculate: [3, 4, 5] - [3, 4].',
-      invalidState: 'Length of [3, 4, 5] does not match length of [3, 4].',
-      expectedState: 'Two operands with the same length.',
-    ),
-  );
-
-  return;
-
   final a = [1, 2];
   final b = [3, 4];
   final c = [...b, 5];
