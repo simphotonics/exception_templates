@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:ansi_modifier/ansi_modifier.dart' show Ansi, AnsiOutput;
 import 'package:test/test.dart';
 
 import 'package:exception_templates/exception_templates.dart';
@@ -39,8 +40,8 @@ void main() {
         expect(e.typeArgument, String);
       }
     });
-    test('Testing colour output ExceptionOf', () {
-      ExceptionOf.colorOutput = ColorOutput.off;
+    test('AnsiOutput.disabled', () {
+      Ansi.status = AnsiOutput.disabled;
       expect(
         ExceptionOf<Complex>().toString().substring(0, 'ExceptionOf'.length),
         'ExceptionOf',
@@ -48,10 +49,16 @@ void main() {
             'Message starts with the exception type '
             'if colour output is turned off.',
       );
-      ExceptionOf.colorOutput = ColorOutput.on;
+    });
+
+    test('AnsiOutput.enabled', () {
+      Ansi.status = AnsiOutput.enabled;
       expect(
-        ExceptionOf<Complex>().toString().substring(0, Ansi.red.code.length),
-        Ansi.red.code,
+        ExceptionOf<Complex>().toString().substring(
+          0,
+          ColorProfile.error.code.length,
+        ),
+        ColorProfile.error.code,
         reason:
             'Message start with the colour code '
             'if colour output is turned on',

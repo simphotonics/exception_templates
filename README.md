@@ -129,26 +129,26 @@ void main(List<String> args) {
 ```
 A typical output produced when running the program above is displayed
 below (the stack trace is not shown):
-![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.png)
+![Console Output](https://github.com/simphotonics/exception_templates/raw/main/images/console_output.svg)
 
 
 Note: Colour output can be globally enabled or disabled by setting
-the static variable `colorOutput`
-to `ColorOutput.on` or `ColorOutput.off`, respectively:
+the static variable `Ansi.status` to
+to `ColorOutput.enabled` or `ColorOutput.disabled`, respectively:
 ```Dart
+import 'package:ansi_modifier/ansi_modifier.dart';
 import 'package:exception_templates/exception_templates.dart';
 
 /// Turning off color output, e.g. if the terminal does not support it.
-void main(List<String> args) {
-  ErrorOfType.colorOutput = ColorOutput.off;
-  ExceptionOfType.colorOutput = ColorOutput.off;
+void main() {
+  Ansi.status = ColorOutput.disabled;
+
 }
 ```
 
-
 ## Utility Functions
 
-The library includes the utility functions
+The library includes the String extension functions
 [`validateIdentifier`][validateIdentifier] and
 [`isValidIdentifier`][isValidIdentifier].
 
@@ -159,7 +159,8 @@ an invalid Dart variable or function name.
 
 ## Examples
 
-A copy of the programs shown in the section above can be found in the folder  [example].
+A copy of the programs shown in the section above can be found in the folder
+ [example].
 
 
 ## Features and bugs

@@ -1,3 +1,4 @@
+export 'src/color/color_profile.dart';
 export 'src/error/error_of.dart';
 export 'src/error/error_of_type.dart';
 export 'src/error/error_type.dart';
@@ -6,4 +7,3 @@ export 'src/exception/exception_of.dart';
 export 'src/exception/exception_of_type.dart';
 export 'src/exception/exception_type.dart';
 export 'src/extension/identifier_validator.dart';
-export 'src/utils/color_option.dart';

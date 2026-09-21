@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612.4" height="106" viewBox="0 0 612.4 106" role="img" aria-label="console2svg output">
+<style>
+.c2.c { font-family: "JetBrains Mono","Cascadia Mono","Segoe UI Mono","Noto Sans Mono","SFMono-Regular",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace; font-size: 14px; }
+.c2 text { dominant-baseline: alphabetic; }
+.c2 .q { shape-rendering: crispEdges; }
+.c2 .w { white-space: pre; }
+.c2 .aa{fill:#f14c4c}
+.c2 .ab{fill:#d4d4d4}
+.c2 .ac{fill:#f5f543}
+.c2 .ad{fill:#23d18b}
+</style><rect width="612.4" height="106" fill="#1e1e1e"/>
+<g class="c2 c" transform="translate(8 8)">
+<rect width="596.4" height="90" fill="#1e1e1e"/>
+<text class="aa" y="14" textLength="226.8">ErrorOfType&lt;LengthMismatch&gt;</text>
+<text class="ab" x="226.8" y="14" textLength="8.4">(</text>
+<text class="aa" x="16.8" y="32" textLength="58.8">message</text>
+<text class="ab w" x="75.6" y="32" textLength="378">: &quot;Could not calculate: [3, 4, 5] - [3, 4].&quot;,</text>
+<text class="ac" x="16.8" y="50" textLength="100.8">invalidState</text>
+<text class="ab w" x="117.6" y="50" textLength="478.8">: &quot;Length of [3, 4, 5] does not match length of [3, 4].&quot;,</text>
+<text class="ad" x="16.8" y="68" textLength="109.2">expectedState</text>
+<text class="ab w" x="126" y="68" textLength="327.6">: &quot;Two operands with the same length.&quot;,</text>
+<text class="ab" y="86" textLength="8.4">)</text>
+</g>
+</svg>

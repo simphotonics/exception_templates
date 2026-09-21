@@ -1,5 +1,4 @@
 import '../mixin/color_string.dart';
-import '../utils/color_option.dart';
 
 /// Parameterized exception class.
 /// The type argument indicates in which context the exception occured.
@@ -22,7 +21,4 @@ class ExceptionOf<T>({
     expectedState: expectedState,
     invalidState: invalidState,
   );
-
-  /// Whether to enable color output.
-  static ColorOutput colorOutput = ColorOutput.on;
 }

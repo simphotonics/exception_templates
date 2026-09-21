@@ -98,9 +98,10 @@ extension IdentifierValidator on String {
     }
   }
 
-  /// Throws an `ErrorOfType<InvalidIdentifier>` if [input] is not a
+  /// Throws an [ErrorOfType] with type argument [InvalidIdentifier]
+  /// if [input] is not a
   /// valid Dart identifier.
-  void validate() {
+  void validateIdentifier() {
     if (!isValidIdentifier) {
       throw ErrorOfType<InvalidIdentifier>(
         message: 'Unsuitable identifier found.',

@@ -1,7 +1,6 @@
 import 'package:exception_templates/src/mixin/color_string.dart';
 
 import 'error_type.dart';
-import '../utils/color_option.dart';
 
 /// Parameterized error class, where the generic
 /// type [T] indicates what *type* of error occured.
@@ -32,7 +31,4 @@ class ErrorOfType<T extends ErrorType>({
     expectedState: expectedState,
     invalidState: invalidState,
   );
-
-  /// Set to `ColorOutput.ON` to enable color output to terminal.
-  static ColorOutput colorOutput = ColorOutput.on;
 }

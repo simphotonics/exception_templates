@@ -1,53 +1,76 @@
 import 'package:ansi_modifier/ansi_modifier.dart';
 import 'package:exception_templates/exception_templates.dart';
-import 'package:exception_templates/src/utils/color_profile.dart';
 import 'package:test/test.dart';
 
 class A;
 
 void main() {
-  group('Console output:', () {
+  group('Console output color on:', () {
     final message = 'message';
     final expectedState = 'expectedState';
     final invalidState = 'invalidState';
     final errorType = ErrorOf<A>;
 
-    test('color on', () {
+    test('no message', () {
       expect(
-        ErrorOf<A>(),
-        '$errorType'.style(ColorProfile.error),
+        ErrorOf<A>().toString(),
+        '$errorType'.style(ColorProfile.error) + '()',
       );
+    });
+
+    test('only message', () {
       expect(
-        toColorString(
-          errorType: errorType,
-          message: message,
-          invalidState: invalidState,
-          expectedState: expectedState,
-        ),
-        '\x1B[31mErrorOf<A>\x1B[0m(\n'
-        ' \x1B[31m message: \x1B[0m "message"\n'
-        ' \x1B[33m invalid state: \x1B[0m"invalidState"\n'
-        ' \x1B[32m expected state: \x1B[0m"expectedState"\n'
+        ErrorOf<A>(message: message).toString(),
+        '\x1B[91mErrorOf<A>\x1B[0m(\n'
+        '  \x1B[91mmessage\x1B[0m: "message",\n'
         ')',
       );
     });
-    test('color off', () {
+    test('message, invalidState, expectedState', () {
       expect(
-        toColorString(errorType: errorType, colorOutput: ColorOutput.off),
-        '$errorType(\n )',
-      );
-      expect(
-        toColorString(
-          errorType: errorType,
+        ErrorOf<A>(
           message: message,
           invalidState: invalidState,
           expectedState: expectedState,
-          colorOutput: ColorOutput.off,
-        ),
+        ).toString(),
+        '\x1B[91mErrorOf<A>\x1B[0m(\n'
+        '  \x1B[91mmessage\x1B[0m: "message",\n'
+        '  \x1B[93minvalidState\x1B[0m: "invalidState",\n'
+        '  \x1B[92mexpectedState\x1B[0m: "expectedState",\n'
+        ')',
+      );
+    });
+  });
+  group('Console output color off:', () {
+    final message = 'message';
+    final expectedState = 'expectedState';
+    final invalidState = 'invalidState';
+    final errorType = ErrorOf<A>;
+
+    test('plain', () {
+      Ansi.status = AnsiOutput.disabled;
+      expect(ErrorOf<A>().toString(), '$errorType()');
+    });
+
+    test('only message', () {
+      expect(
+        ErrorOf<A>(message: message).toString(),
         'ErrorOf<A>(\n'
-        '  message:  "message"\n'
-        '  invalid state: "invalidState"\n'
-        '  expected state: "expectedState"\n'
+        '  message: "message",\n'
+        ')',
+      );
+    });
+    test('message, invalidState, expectedState', () {
+      expect(
+        ErrorOf<A>(
+          message: message,
+          invalidState: invalidState,
+          expectedState: expectedState,
+        ).toString(),
+        'ErrorOf<A>(\n'
+        '  message: "message",\n'
+        '  invalidState: "invalidState",\n'
+        '  expectedState: "expectedState",\n'
         ')',
       );
     });
